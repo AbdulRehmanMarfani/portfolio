@@ -142,4 +142,3 @@ This portfolio includes certifications from the following institutions:
 Feel free to fork, modify, and use this portfolio as a template for your own projects!
 
 ---
-```
