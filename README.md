@@ -39,7 +39,7 @@ Check out the live version of my portfolio here: [Website Link](https://abdulreh
 ### 📌 Projects Section  
 ![Projects Section Screenshot](./image_2024-12-22_003600212.png)  
 
-### 📌 Certifications Modal  
+### 📌 Certifications Section  
 ![Certifications Modal Screenshot](./image_2024-12-22_003710255.png)  
 
 ---
@@ -47,14 +47,7 @@ Check out the live version of my portfolio here: [Website Link](https://abdulreh
 ## 📂 Folder Structure
 
 ```
-├── index.html         # Main HTML file
-├── styles.css         # Custom CSS for styling
-├── script.js          # JavaScript for interactivity
-├── assets/            # Folder containing images and assets
-│   ├── profile-pic.png
-│   ├── project-images/
-│   └── certification-images/
-└── README.md          # Project documentation
+├── Data-flair.jpg # Certification image for Data Flair ├── Github.png # Icon for GitHub link ├── Google-certificate.jpg # Certification image for Google ├── IBM-certificate.png # Certification image for IBM ├── index.html # Main HTML file ├── Kaggle-certificate.png # Certification image for Kaggle ├── Linkedin.png # Icon for LinkedIn link ├── Me.jpg # Profile picture ├── Python_Essentials_1.png # Certification image for Python Essentials 1 ├── Python_Essentials_2.png # Certification image for Python Essentials 2 ├── script.js # JavaScript for interactivity ├── styles.css # Custom CSS for styling ├── Untitled design.png # Additional design image
 ```
 
 ---
