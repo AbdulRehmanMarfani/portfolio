@@ -44,10 +44,33 @@ Check out the live version of my portfolio here: [Website Link](https://abdulreh
 
 ---
 
+
 ## 📂 Folder Structure
 
 ```
-├── Data-flair.jpg # Certification image for Data Flair ├── Github.png # Icon for GitHub link ├── Google-certificate.jpg # Certification image for Google ├── IBM-certificate.png # Certification image for IBM ├── index.html # Main HTML file ├── Kaggle-certificate.png # Certification image for Kaggle ├── Linkedin.png # Icon for LinkedIn link ├── Me.jpg # Profile picture ├── Python_Essentials_1.png # Certification image for Python Essentials 1 ├── Python_Essentials_2.png # Certification image for Python Essentials 2 ├── script.js # JavaScript for interactivity ├── styles.css # Custom CSS for styling ├── Untitled design.png # Additional design image
+├── Data-flair.jpg               # Certification image for Data Flair
+├── Github.png                   # Icon for GitHub link
+├── Google-certificate.jpg       # Certification image for Google
+├── IBM-certificate.png          # Certification image for IBM
+├── index.html                   # Main HTML file
+├── Kaggle-certificate.png       # Certification image for Kaggle
+├── Linkedin.png                 # Icon for LinkedIn link
+├── Me.jpg                       # Profile picture
+├── Python_Essentials_1.png      # Certification image for Python Essentials 1
+├── Python_Essentials_2.png      # Certification image for Python Essentials 2
+├── script.js                    # JavaScript for interactivity
+├── styles.css                   # Custom CSS for styling
+├── Untitled design.png          # Additional design image
+```
+
+```
+
+### Notes:
+1. Replace the `Your Website Link` placeholder with the URL of your hosted portfolio (e.g., GitHub Pages or Netlify).
+2. Add more screenshots if required and update the paths accordingly.
+3. If you have a `LICENSE` file in your repository, link it under the "License" section. If not, consider adding one. 
+
+Let me know if you need further assistance!
 ```
 
 ---
@@ -115,10 +138,6 @@ This portfolio includes certifications from the following institutions:
 - Enhance accessibility features for better user experience.
 
 ---
-
-## 📜 License
-
-This project is open-source and available under the [MIT License](./LICENSE).
 
 Feel free to fork, modify, and use this portfolio as a template for your own projects!
 
