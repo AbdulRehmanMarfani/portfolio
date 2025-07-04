@@ -196,44 +196,104 @@ const Index = () => {
         )}
       </nav>
 
-      {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="mb-8">
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-4">
-              Hi, I'm <span className="text-primary">Viki</span>
-            </h1>
-            <div className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-6 h-12">
-              I'm a <span className="text-primary font-semibold">{typedText}</span>
-              <span className="animate-pulse">|</span>
+      {/* Hero Section with Blended Background */}
+      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gray-900">
+        {/* Geometric Background Pattern */}
+        <div className="absolute inset-0 bg-gray-900">
+          <div className="absolute inset-0 opacity-20">
+            <svg className="w-full h-full" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 400L200 200L400 600L600 100L800 500L1000 300L1200 400V800H0V400Z" fill="url(#gradient1)" />
+              <path d="M0 600L300 300L600 700L900 200L1200 500V800H0V600Z" fill="url(#gradient2)" />
+              <defs>
+                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#6366f1" stopOpacity="0.3" />
+                  <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.1" />
+                </linearGradient>
+                <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.2" />
+                  <stop offset="100%" stopColor="#6366f1" stopOpacity="0.1" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
+          {/* Left Content */}
+          <div className="text-left">
+            <div className="mb-8">
+              <p className="text-yellow-400 text-lg mb-2 font-medium">👋 Hey, there!</p>
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+                I'm <span className="text-primary bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Viki</span>
+              </h1>
+              <div className="text-xl md:text-2xl text-gray-300 mb-6 h-12">
+                a <span className="text-blue-400 font-semibold">{typedText}</span>
+                <span className="animate-pulse text-blue-400">|</span>
+              </div>
+              <p className="text-gray-400 mb-2">from Pondicherry, India.</p>
+              <div className="flex items-center space-x-2 text-gray-400 mb-8">
+                <Briefcase className="h-4 w-4" />
+                <span>TCS</span>
+              </div>
             </div>
-            <div className="flex items-center justify-center space-x-2 text-gray-500 dark:text-gray-400 mb-8">
-              <MapPin className="h-5 w-5" />
-              <span>Pondicherry, India</span>
-              <span>•</span>
-              <Briefcase className="h-5 w-5" />
-              <span>TCS</span>
+            
+            {/* Navigation Links */}
+            <div className="flex space-x-6 mb-8">
+              {['Home', 'About', 'Resume', 'Contact'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item.toLowerCase())}
+                  className="text-gray-300 hover:text-white transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-400 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+
+            {/* Social Icons */}
+            <div className="flex space-x-4">
+              <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white hover:bg-white/10" asChild>
+                <a href="https://github.com/i-viki" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-5 w-5" />
+                </a>
+              </Button>
+              <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white hover:bg-white/10" asChild>
+                <a href="https://linkedin.com/in/viki" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+              </Button>
             </div>
           </div>
-          
-          <div className="flex justify-center space-x-6 mb-8">
-            <Button variant="outline" size="lg" asChild>
-              <a href="https://github.com/i-viki" target="_blank" rel="noopener noreferrer">
-                <Github className="h-5 w-5 mr-2" />
-                GitHub
-              </a>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="https://linkedin.com/in/viki" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="h-5 w-5 mr-2" />
-                LinkedIn
-              </a>
-            </Button>
+
+          {/* Right Side - Profile Image with Blend Effect */}
+          <div className="relative">
+            <div className="relative w-full max-w-md mx-auto">
+              {/* Background geometric shapes */}
+              <div className="absolute inset-0 -z-10">
+                <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-blue-500/20 rounded-full blur-xl"></div>
+                <div className="absolute bottom-1/3 left-1/4 w-24 h-24 bg-purple-500/20 rounded-full blur-xl"></div>
+              </div>
+              
+              {/* Profile Image */}
+              <div className="relative overflow-hidden rounded-lg">
+                <img 
+                  src="/lovable-uploads/46b6d654-d282-454f-bacc-9c6d47b1b985.png" 
+                  alt="Viki - Backend Developer"
+                  className="w-full h-auto object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-300 filter contrast-110 brightness-110"
+                />
+                {/* Overlay gradient for better blending */}
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent pointer-events-none"></div>
+              </div>
+              
+              {/* Accent elements */}
+              <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-80 animate-pulse"></div>
+            </div>
           </div>
-          
-          <Button size="lg" onClick={() => scrollToSection('contact')}>
-            Get In Touch
-          </Button>
+        </div>
+
+        {/* Bottom attribution */}
+        <div className="absolute bottom-4 left-4 text-gray-500 text-sm">
+          Designed by jv
         </div>
       </section>
 
