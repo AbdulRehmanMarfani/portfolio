@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -31,7 +30,7 @@ const Index = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [typedText, setTypedText] = useState('');
-  const roles = ['Backend Developer', 'Full Stack Engineer', 'Problem Solver', 'Tech Enthusiast'];
+  const roles = ['Python Developer', 'Frontend Developer', 'Hardware Intern', 'Aspiring Full-Stack Engineer'];
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
 
   // Typing animation effect
@@ -64,47 +63,68 @@ const Index = () => {
 
   const skills = {
     backend: [
-      { name: 'Java', level: 90 },
-      { name: 'Spring Boot', level: 85 },
-      { name: 'Python', level: 80 },
-      { name: 'Node.js', level: 75 },
-      { name: 'REST APIs', level: 88 }
+      { name: 'Python', level: 95 },
+      { name: 'APIs Integration', level: 90 },
+      { name: 'Pandas', level: 85 },
+      { name: 'NumPy', level: 85 },
+      { name: 'BeautifulSoup', level: 88 }
     ],
     frontend: [
-      { name: 'React', level: 85 },
-      { name: 'JavaScript', level: 82 },
-      { name: 'HTML/CSS', level: 90 },
-      { name: 'TypeScript', level: 78 },
-      { name: 'Tailwind CSS', level: 80 }
+      { name: 'JavaScript (ES6+)', level: 85 },
+      { name: 'HTML5', level: 90 },
+      { name: 'CSS3', level: 88 },
+      { name: 'Bootstrap', level: 70 },
+      { name: 'Responsive Design', level: 85 }
     ],
     tools: [
       { name: 'Git', level: 85 },
-      { name: 'Docker', level: 70 },
-      { name: 'AWS', level: 75 },
-      { name: 'MySQL', level: 80 },
-      { name: 'MongoDB', level: 72 }
+      { name: 'VS Code', level: 90 },
+      { name: 'Arduino', level: 80 },
+      { name: 'Bash', level: 75 },
+      { name: 'Tkinter', level: 80 }
     ]
   };
 
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'Full-stack e-commerce solution with React frontend and Spring Boot backend',
-      tech: ['React', 'Spring Boot', 'MySQL', 'JWT'],
+      title: 'Flight Deal Finder',
+      description: 'Automated tool that scrapes airfare deals and sends alerts using Google Sheets & Tequila API',
+      tech: ['Python', 'Google Sheets API', 'Tequila API', 'Twilio'],
       github: '#',
       live: '#'
     },
     {
-      title: 'Task Management API',
-      description: 'RESTful API for task management with authentication and real-time updates',
-      tech: ['Node.js', 'Express', 'MongoDB', 'Socket.io'],
+      title: 'Stock Alert + News System',
+      description: 'Monitors stock price changes and sends news summaries via SMS notifications',
+      tech: ['Python', 'Alpha Vantage API', 'NewsAPI', 'Twilio'],
       github: '#',
       live: '#'
     },
     {
-      title: 'ML Model Deployment',
-      description: 'Machine learning model deployment with Flask and Docker containerization',
-      tech: ['Python', 'Flask', 'Docker', 'scikit-learn'],
+      title: 'Bluetooth-Controlled Car',
+      description: 'Phone-controlled robot car built with Arduino Uno and HC-05 Bluetooth module',
+      tech: ['Arduino', 'C++', 'Bluetooth', 'Motor Driver'],
+      github: '#',
+      live: '#'
+    },
+    {
+      title: 'Portfolio Website',
+      description: 'Responsive personal website with modal previews and custom dark-themed styling',
+      tech: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
+      github: 'https://github.com/abdulrehmanmarfani/portfolio',
+      live: 'https://abdulrehmanmarfani.github.io/portfolio/'
+    },
+    {
+      title: 'Workout Logger',
+      description: 'GUI application that parses and logs workouts to Google Sheets using Nutritionix API',
+      tech: ['Python', 'Tkinter', 'Google Sheets API', 'Nutritionix'],
+      github: '#',
+      live: '#'
+    },
+    {
+      title: 'Pomodoro Timer',
+      description: 'GUI-based productivity timer application built with Python Tkinter',
+      tech: ['Python', 'Tkinter', 'GUI Design'],
       github: '#',
       live: '#'
     }
@@ -112,22 +132,34 @@ const Index = () => {
 
   const certifications = [
     {
-      title: 'AWS Certified Developer',
-      issuer: 'Amazon Web Services',
+      title: 'Crash Course on Python',
+      issuer: 'Google',
       date: '2023',
-      credentialId: 'AWS-12345'
+      credentialId: 'GOOGLE-PY-001'
     },
     {
-      title: 'Google Cloud Professional',
-      issuer: 'Google Cloud',
+      title: 'Python for Data Science, AI & Development',
+      issuer: 'IBM',
       date: '2023',
-      credentialId: 'GCP-67890'
+      credentialId: 'IBM-DS-001'
     },
     {
-      title: 'GitHub Actions Certification',
-      issuer: 'GitHub',
-      date: '2024',
-      credentialId: 'GH-11111'
+      title: 'Python Essentials 1 & 2',
+      issuer: 'Cisco Networking Academy',
+      date: '2023',
+      credentialId: 'CISCO-PY-12'
+    },
+    {
+      title: 'Introduction to Python',
+      issuer: 'Data Flair',
+      date: '2023',
+      credentialId: 'DF-PY-001'
+    },
+    {
+      title: 'Python Course',
+      issuer: 'Kaggle',
+      date: '2023',
+      credentialId: 'KAGGLE-PY-01'
     }
   ];
 
@@ -142,7 +174,7 @@ const Index = () => {
       <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="font-bold text-xl text-primary">Viki</div>
+            <div className="font-bold text-xl text-primary">Abdul Rehman</div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
@@ -224,16 +256,16 @@ const Index = () => {
             <div className="mb-8">
               <p className="text-yellow-400 text-lg mb-2 font-medium">👋 Hey, there!</p>
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
-                I'm <span className="text-primary bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Viki</span>
+                I'm <span className="text-primary bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Abdul Rehman</span>
               </h1>
               <div className="text-xl md:text-2xl text-gray-300 mb-6 h-12">
                 a <span className="text-blue-400 font-semibold">{typedText}</span>
                 <span className="animate-pulse text-blue-400">|</span>
               </div>
-              <p className="text-gray-400 mb-2">from Pondicherry, India.</p>
+              <p className="text-gray-400 mb-2">from Karachi, Pakistan.</p>
               <div className="flex items-center space-x-2 text-gray-400 mb-8">
                 <Briefcase className="h-4 w-4" />
-                <span>TCS</span>
+                <span>Phenomenon Labs - Cedar College</span>
               </div>
             </div>
             
@@ -253,12 +285,12 @@ const Index = () => {
             {/* Social Icons */}
             <div className="flex space-x-4">
               <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white hover:bg-white/10" asChild>
-                <a href="https://github.com/i-viki" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/abdulrehmanmarfani" target="_blank" rel="noopener noreferrer">
                   <Github className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white hover:bg-white/10" asChild>
-                <a href="https://linkedin.com/in/viki" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/abdul-rehman-marfani-4aa587276" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5" />
                 </a>
               </Button>
@@ -278,7 +310,7 @@ const Index = () => {
               <div className="relative overflow-hidden rounded-lg">
                 <img 
                   src="/lovable-uploads/46b6d654-d282-454f-bacc-9c6d47b1b985.png" 
-                  alt="Viki - Backend Developer"
+                  alt="Abdul Rehman Marfani - Python Developer"
                   className="w-full h-auto object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-300 filter contrast-110 brightness-110"
                 />
                 {/* Overlay gradient for better blending */}
@@ -290,11 +322,6 @@ const Index = () => {
             </div>
           </div>
         </div>
-
-        {/* Bottom attribution */}
-        <div className="absolute bottom-4 left-4 text-gray-500 text-sm">
-          Designed by jv
-        </div>
       </section>
 
       {/* About Section */}
@@ -304,19 +331,19 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <div className="w-64 h-64 mx-auto bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center">
-                <div className="text-6xl text-white">👨‍💻</div>
+                <div className="text-6xl text-white">🐍</div>
               </div>
             </div>
             <div>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                I'm a passionate Backend Developer with 2+ years of experience at TCS, specializing in building scalable web applications and APIs. I love solving complex problems and turning ideas into reality through clean, efficient code.
+                I'm a dynamic Python Developer with a strong foundation in web development and automation. Currently working as a Hardware Intern at Phenomenon Labs while pursuing my Cambridge A Levels in Computer Science, Mathematics, and Physics at Cedar College.
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community.
+                I excel in creating innovative solutions through Python automation, API integrations, and building responsive web applications. My passion lies in solving complex problems and fostering collaboration in tech communities.
               </p>
               <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
                 <p className="text-gray-700 dark:text-gray-300 italic">
-                  "Code is like humor. When you have to explain it, it's bad." - Cory House
+                  "Python automation and API integration enthusiast, always eager to learn and build innovative solutions."
                 </p>
               </div>
             </div>
@@ -335,7 +362,7 @@ const Index = () => {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Database className="h-6 w-6 mr-2 text-primary" />
-                  Backend
+                  Backend & APIs
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -377,7 +404,7 @@ const Index = () => {
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Code2 className="h-6 w-6 mr-2 text-primary" />
-                  Tools & DevOps
+                  Tools & Hardware
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -452,15 +479,34 @@ const Index = () => {
               <CardContent>
                 <div className="space-y-6">
                   <div className="border-l-4 border-primary pl-4">
-                    <h3 className="font-semibold text-lg">Backend Developer</h3>
-                    <p className="text-primary font-medium">Tata Consultancy Services (TCS)</p>
-                    <p className="text-sm text-gray-500 mb-2">2022 - Present • Pondicherry, India</p>
+                    <h3 className="font-semibold text-lg">Hardware Intern</h3>
+                    <p className="text-primary font-medium">Phenomenon Labs - CREW, Cedar College</p>
+                    <p className="text-sm text-gray-500 mb-2">January 2025 - Present • Karachi, Pakistan</p>
                     <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
-                      <li>• Developed REST APIs using Spring Boot and Java</li>
-                      <li>• Implemented JWT authentication and authorization</li>
-                      <li>• Unit testing with JUnit and Mockito</li>
-                      <li>• Database design and optimization with MySQL</li>
-                      <li>• Collaborated with cross-functional teams using Agile methodology</li>
+                      <li>• Built Bluetooth-controlled car using Arduino Uno and motor driver</li>
+                      <li>• Practiced soldering and debugging with oscilloscope</li>
+                      <li>• Gained hands-on experience with power tools and hardware troubleshooting</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="border-l-4 border-blue-500 pl-4">
+                    <h3 className="font-semibold text-lg">Freelance Python Developer</h3>
+                    <p className="text-blue-500 font-medium">Self-Employed</p>
+                    <p className="text-sm text-gray-500 mb-2">January 2023 - Present • Remote</p>
+                    <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                      <li>• Built Python automation tools using multiple APIs</li>
+                      <li>• Developed GUI and CLI applications</li>
+                      <li>• Integrated Google Sheets API and SMS/WhatsApp notifications</li>
+                    </ul>
+                  </div>
+
+                  <div className="border-l-4 border-green-500 pl-4">
+                    <h3 className="font-semibold text-lg">Teaching Assistant</h3>
+                    <p className="text-green-500 font-medium">Private Tuition</p>
+                    <p className="text-sm text-gray-500 mb-2">January 2023 - January 2024 • Karachi</p>
+                    <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                      <li>• Taught programming and mathematics to students</li>
+                      <li>• Created simplified learning plans and materials</li>
                     </ul>
                   </div>
                 </div>
@@ -478,33 +524,59 @@ const Index = () => {
               <CardContent>
                 <div className="space-y-6">
                   <div className="border-l-4 border-primary pl-4">
-                    <h3 className="font-semibold text-lg">Bachelor of Technology</h3>
-                    <p className="text-primary font-medium">Computer Science & Engineering</p>
-                    <p className="text-sm text-gray-500 mb-2">2018 - 2022 • CGPA: 8.5/10</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">
-                      Focused on software engineering, data structures, algorithms, and database management systems.
+                    <h3 className="font-semibold text-lg">Cambridge A Levels</h3>
+                    <p className="text-primary font-medium">Cedar College Karachi</p>
+                    <p className="text-sm text-gray-500 mb-2">Expected June 2026 • Computer Science, Mathematics, Physics</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
+                      Active member of CREW and Cedar CODES clubs. Part of organizing team for Robotics & Physics modules at Scinnova VIII.
                     </p>
+                  </div>
+
+                  <div className="border-l-4 border-blue-500 pl-4">
+                    <h3 className="font-semibold text-lg">Cambridge O Levels</h3>
+                    <p className="text-blue-500 font-medium">Private Studies Karachi</p>
+                    <p className="text-sm text-gray-500 mb-2">March 2024 • Mathematics, Physics, Chemistry, Computer Science</p>
+                  </div>
+
+                  <div className="border-l-4 border-green-500 pl-4">
+                    <h3 className="font-semibold text-lg">Cambridge O Levels</h3>
+                    <p className="text-green-500 font-medium">Happy Home School Karachi</p>
+                    <p className="text-sm text-gray-500 mb-2">August 2023</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Certifications */}
+            {/* Awards & Certifications */}
             <Card className="md:col-span-2">
               <CardHeader>
                 <CardTitle className="flex items-center">
                   <Award className="h-6 w-6 mr-2 text-primary" />
-                  Professional Certifications
+                  Awards & Professional Certifications
                 </CardTitle>
               </CardHeader>
               <CardContent>
+                <div className="mb-6">
+                  <h4 className="font-semibold mb-3">Awards & Leadership</h4>
+                  <div className="grid md:grid-cols-2 gap-4 mb-6">
+                    <div className="border rounded-lg p-4 bg-yellow-50 dark:bg-yellow-900/20">
+                      <h5 className="font-semibold">CREW & CODES Leadership</h5>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">Shortlisted for leadership positions at Cedar College</p>
+                    </div>
+                    <div className="border rounded-lg p-4 bg-blue-50 dark:bg-blue-900/20">
+                      <h5 className="font-semibold">Scinova 2025 Organizer</h5>
+                      <p className="text-sm text-gray-600 dark:text-gray-300">Co-managed Robotics, Physics & Math modules</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <h4 className="font-semibold mb-3">Professional Certifications</h4>
                 <div className="grid md:grid-cols-3 gap-4">
                   {certifications.map((cert, index) => (
                     <div key={index} className="border rounded-lg p-4">
-                      <h4 className="font-semibold">{cert.title}</h4>
+                      <h4 className="font-semibold text-sm">{cert.title}</h4>
                       <p className="text-sm text-primary">{cert.issuer}</p>
                       <p className="text-sm text-gray-500">{cert.date}</p>
-                      <p className="text-xs text-gray-400 mt-1">ID: {cert.credentialId}</p>
                     </div>
                   ))}
                 </div>
@@ -519,7 +591,7 @@ const Index = () => {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-8 text-gray-900 dark:text-white">Resume</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-            Download my complete resume to learn more about my experience and qualifications.
+            Download my complete resume to learn more about my experience, projects, and qualifications as a Python Developer.
           </p>
           <Button size="lg" asChild>
             <a href="/resume.pdf" download>
@@ -539,22 +611,22 @@ const Index = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Let's Connect</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-8">
-                I'm always interested in hearing about new opportunities and interesting projects. 
-                Whether you want to discuss a project or just say hi, I'll try my best to get back to you!
+                I'm always interested in hearing about new opportunities, exciting projects, and collaboration possibilities. 
+                Whether you want to discuss Python automation, web development, or just say hi, I'll try my best to get back to you!
               </p>
               
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 text-primary mr-3" />
-                  <span className="text-gray-700 dark:text-gray-300">viki.developer@email.com</span>
+                  <span className="text-gray-700 dark:text-gray-300">abdulrehmanmarfani84@gmail.com</span>
                 </div>
                 <div className="flex items-center">
                   <Phone className="h-5 w-5 text-primary mr-3" />
-                  <span className="text-gray-700 dark:text-gray-300">+91 98765 43210</span>
+                  <span className="text-gray-700 dark:text-gray-300">+92 3473752831</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="h-5 w-5 text-primary mr-3" />
-                  <span className="text-gray-700 dark:text-gray-300">Pondicherry, India</span>
+                  <span className="text-gray-700 dark:text-gray-300">Karachi, Pakistan</span>
                 </div>
               </div>
             </div>
@@ -597,9 +669,9 @@ const Index = () => {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Viki</h3>
+              <h3 className="text-xl font-bold mb-4">Abdul Rehman Marfani</h3>
               <p className="text-gray-400">
-                Backend Developer passionate about creating scalable solutions and clean code.
+                Python Developer passionate about automation, web development, and creating innovative solutions.
               </p>
             </div>
             <div>
@@ -620,17 +692,17 @@ const Index = () => {
               <h4 className="font-semibold mb-4">Connect</h4>
               <div className="flex space-x-4">
                 <Button variant="ghost" size="icon" asChild>
-                  <a href="https://github.com/i-viki" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/abdulrehmanmarfani" target="_blank" rel="noopener noreferrer">
                     <Github className="h-5 w-5" />
                   </a>
                 </Button>
                 <Button variant="ghost" size="icon" asChild>
-                  <a href="https://linkedin.com/in/viki" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/in/abdul-rehman-marfani-4aa587276" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="h-5 w-5" />
                   </a>
                 </Button>
                 <Button variant="ghost" size="icon" asChild>
-                  <a href="mailto:viki.developer@email.com">
+                  <a href="mailto:abdulrehmanmarfani84@gmail.com">
                     <Mail className="h-5 w-5" />
                   </a>
                 </Button>
@@ -638,7 +710,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Viki. All rights reserved. Built with React & Tailwind CSS.</p>
+            <p>&copy; 2024 Abdul Rehman Marfani. All rights reserved. Built with React & Tailwind CSS.</p>
           </div>
         </div>
       </footer>
