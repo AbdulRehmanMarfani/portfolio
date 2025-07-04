@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -23,7 +24,8 @@ import {
   Moon,
   Sun,
   Menu,
-  X
+  X,
+  Instagram
 } from 'lucide-react';
 
 const Index = () => {
@@ -127,6 +129,39 @@ const Index = () => {
       tech: ['Python', 'Tkinter', 'GUI Design'],
       github: '#',
       live: '#'
+    }
+  ];
+
+  const certificateImages = [
+    {
+      src: '/lovable-uploads/198db4a9-86f5-427b-9641-18d8a9350267.png',
+      title: 'Python Course - Kaggle',
+      issuer: 'Kaggle'
+    },
+    {
+      src: '/lovable-uploads/afd615f2-8af3-4838-a9c2-54ec7b0f3d22.png',
+      title: 'Crash Course on Python',
+      issuer: 'Google'
+    },
+    {
+      src: '/lovable-uploads/785b7b38-7f47-435d-8967-072da1b36a5b.png',
+      title: 'Python for Data Science, AI & Development',
+      issuer: 'IBM'
+    },
+    {
+      src: '/lovable-uploads/58ff92f1-3b51-4a39-94d7-04e7d2fe7e9f.png',
+      title: 'Introduction to Python',
+      issuer: 'Data Flair'
+    },
+    {
+      src: '/lovable-uploads/135ed8d5-f2d4-4278-8bb7-aed77d9297b8.png',
+      title: 'Python Essentials 1',
+      issuer: 'Cisco Networking Academy'
+    },
+    {
+      src: '/lovable-uploads/42b053d9-45a6-4294-9a5d-be7f40656bd0.png',
+      title: 'Python Essentials 2',
+      issuer: 'Cisco Networking Academy'
     }
   ];
 
@@ -294,6 +329,11 @@ const Index = () => {
                   <Linkedin className="h-5 w-5" />
                 </a>
               </Button>
+              <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white hover:bg-white/10" asChild>
+                <a href="https://www.instagram.com/marfani._.priv/" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="h-5 w-5" />
+                </a>
+              </Button>
             </div>
           </div>
 
@@ -330,8 +370,12 @@ const Index = () => {
           <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">About Me</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="w-64 h-64 mx-auto bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center">
-                <div className="text-6xl text-white">🐍</div>
+              <div className="w-64 h-64 mx-auto bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center relative overflow-hidden">
+                {/* Python logo with book */}
+                <div className="relative">
+                  <div className="text-6xl mb-2">🐍</div>
+                  <div className="text-3xl absolute -bottom-2 -right-2">📚</div>
+                </div>
               </div>
             </div>
             <div>
@@ -570,6 +614,26 @@ const Index = () => {
                   </div>
                 </div>
                 
+                {/* Visual Certificates Gallery */}
+                <div className="mb-6">
+                  <h4 className="font-semibold mb-3">Certificate Gallery</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {certificateImages.map((cert, index) => (
+                      <div key={index} className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                        <img 
+                          src={cert.src} 
+                          alt={cert.title}
+                          className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="p-3">
+                          <h5 className="font-semibold text-sm">{cert.title}</h5>
+                          <p className="text-xs text-primary">{cert.issuer}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
                 <h4 className="font-semibold mb-3">Professional Certifications</h4>
                 <div className="grid md:grid-cols-3 gap-4">
                   {certifications.map((cert, index) => (
@@ -699,6 +763,11 @@ const Index = () => {
                 <Button variant="ghost" size="icon" asChild>
                   <a href="https://www.linkedin.com/in/abdul-rehman-marfani-4aa587276" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="h-5 w-5" />
+                  </a>
+                </Button>
+                <Button variant="ghost" size="icon" asChild>
+                  <a href="https://www.instagram.com/marfani._.priv/" target="_blank" rel="noopener noreferrer">
+                    <Instagram className="h-5 w-5" />
                   </a>
                 </Button>
                 <Button variant="ghost" size="icon" asChild>
