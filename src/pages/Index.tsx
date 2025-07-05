@@ -32,7 +32,8 @@ const Index = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [typedText, setTypedText] = useState('');
-  const roles = ['Python Developer', 'Frontend Developer', 'Hardware Intern', 'Aspiring Full-Stack Engineer'];
+  const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null);
+  const roles = ['Python Developer', 'Frontend Developer', 'Aspiring Full-Stack Engineer'];
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
 
   // Typing animation effect
@@ -81,9 +82,9 @@ const Index = () => {
     tools: [
       { name: 'Git', level: 85 },
       { name: 'VS Code', level: 90 },
-      { name: 'Arduino', level: 80 },
       { name: 'Bash', level: 75 },
-      { name: 'Tkinter', level: 80 }
+      { name: 'Tkinter', level: 80 },
+      { name: 'Google Sheets API', level: 85 }
     ]
   };
 
@@ -99,13 +100,6 @@ const Index = () => {
       title: 'Stock Alert + News System',
       description: 'Monitors stock price changes and sends news summaries via SMS notifications',
       tech: ['Python', 'Alpha Vantage API', 'NewsAPI', 'Twilio'],
-      github: '#',
-      live: '#'
-    },
-    {
-      title: 'Bluetooth-Controlled Car',
-      description: 'Phone-controlled robot car built with Arduino Uno and HC-05 Bluetooth module',
-      tech: ['Arduino', 'C++', 'Bluetooth', 'Motor Driver'],
       github: '#',
       live: '#'
     },
@@ -205,11 +199,34 @@ const Index = () => {
 
   return (
     <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
+      {/* Certificate Modal */}
+      {selectedCertificate && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+          onClick={() => setSelectedCertificate(null)}
+        >
+          <div className="relative max-w-4xl max-h-full">
+            <img 
+              src={selectedCertificate} 
+              alt="Certificate"
+              className="max-w-full max-h-full object-contain rounded-lg"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <button
+              onClick={() => setSelectedCertificate(null)}
+              className="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75"
+            >
+              <X className="h-6 w-6" />
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Sticky Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b">
+      <nav className="sticky top-0 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="font-bold text-xl text-primary">Abdul Rehman</div>
+            <div className="font-bold text-lg sm:text-xl text-primary">Abdul Rehman</div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
@@ -264,7 +281,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section with Blended Background */}
-      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gray-900">
+      <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gray-900 px-4">
         {/* Geometric Background Pattern */}
         <div className="absolute inset-0 bg-gray-900">
           <div className="absolute inset-0 opacity-20">
@@ -285,27 +302,27 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center relative z-10">
           {/* Left Content */}
           <div className="text-left">
-            <div className="mb-8">
-              <p className="text-yellow-400 text-lg mb-2 font-medium">👋 Hey, there!</p>
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+            <div className="mb-6 md:mb-8">
+              <p className="text-yellow-400 text-base md:text-lg mb-2 font-medium">👋 Hey, there!</p>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
                 I'm <span className="text-primary bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Abdul Rehman</span>
               </h1>
-              <div className="text-xl md:text-2xl text-gray-300 mb-6 h-12">
+              <div className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-6 h-8 md:h-12">
                 a <span className="text-blue-400 font-semibold">{typedText}</span>
                 <span className="animate-pulse text-blue-400">|</span>
               </div>
               <p className="text-gray-400 mb-2">from Karachi, Pakistan.</p>
-              <div className="flex items-center space-x-2 text-gray-400 mb-8">
+              <div className="flex items-center space-x-2 text-gray-400 mb-6 md:mb-8">
                 <Briefcase className="h-4 w-4" />
-                <span>Phenomenon Labs - Cedar College</span>
+                <span className="text-sm sm:text-base">Freelance Python Developer</span>
               </div>
             </div>
             
             {/* Navigation Links */}
-            <div className="flex space-x-6 mb-8">
+            <div className="flex flex-wrap gap-4 md:space-x-6 mb-6 md:mb-8">
               {['Home', 'About', 'Resume', 'Contact'].map((item) => (
                 <button
                   key={item}
@@ -338,12 +355,12 @@ const Index = () => {
           </div>
 
           {/* Right Side - Profile Image with Blend Effect */}
-          <div className="relative">
-            <div className="relative w-full max-w-md mx-auto">
+          <div className="relative order-first md:order-last">
+            <div className="relative w-full max-w-sm md:max-w-md mx-auto">
               {/* Background geometric shapes */}
               <div className="absolute inset-0 -z-10">
-                <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-blue-500/20 rounded-full blur-xl"></div>
-                <div className="absolute bottom-1/3 left-1/4 w-24 h-24 bg-purple-500/20 rounded-full blur-xl"></div>
+                <div className="absolute top-1/4 right-1/4 w-24 md:w-32 h-24 md:h-32 bg-blue-500/20 rounded-full blur-xl"></div>
+                <div className="absolute bottom-1/3 left-1/4 w-16 md:w-24 h-16 md:h-24 bg-purple-500/20 rounded-full blur-xl"></div>
               </div>
               
               {/* Profile Image */}
@@ -358,35 +375,35 @@ const Index = () => {
               </div>
               
               {/* Accent elements */}
-              <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-80 animate-pulse"></div>
+              <div className="absolute -bottom-4 -right-4 w-12 md:w-16 h-12 md:h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-80 animate-pulse"></div>
             </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white dark:bg-gray-900">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">About Me</h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section id="about" className="py-16 md:py-20 bg-white dark:bg-gray-900 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-gray-900 dark:text-white">About Me</h2>
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
             <div>
-              <div className="w-64 h-64 mx-auto bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center relative overflow-hidden">
+              <div className="w-48 md:w-64 h-48 md:h-64 mx-auto bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center relative overflow-hidden">
                 {/* Python logo with book */}
                 <div className="relative">
-                  <div className="text-6xl mb-2">🐍</div>
-                  <div className="text-3xl absolute -bottom-2 -right-2">📚</div>
+                  <div className="text-4xl md:text-6xl mb-2">🐍</div>
+                  <div className="text-2xl md:text-3xl absolute -bottom-2 -right-2">📚</div>
                 </div>
               </div>
             </div>
             <div>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                I'm a dynamic Python Developer with a strong foundation in web development and automation. Currently working as a Hardware Intern at Phenomenon Labs while pursuing my Cambridge A Levels in Computer Science, Mathematics, and Physics at Cedar College.
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-6">
+                I'm a dynamic Python Developer with a strong foundation in web development and automation. Currently pursuing my Cambridge A Levels in Computer Science, Mathematics, and Physics at Cedar College.
               </p>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-6">
                 I excel in creating innovative solutions through Python automation, API integrations, and building responsive web applications. My passion lies in solving complex problems and fostering collaboration in tech communities.
               </p>
-              <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg border-l-4 border-primary">
-                <p className="text-gray-700 dark:text-gray-300 italic">
+              <div className="bg-gray-50 dark:bg-gray-800 p-4 md:p-6 rounded-lg border-l-4 border-primary">
+                <p className="text-gray-700 dark:text-gray-300 italic text-sm md:text-base">
                   "Python automation and API integration enthusiast, always eager to learn and build innovative solutions."
                 </p>
               </div>
@@ -396,16 +413,16 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">Skills & Technologies</h2>
+      <section id="skills" className="py-16 md:py-20 bg-gray-50 dark:bg-gray-800 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-gray-900 dark:text-white">Skills & Technologies</h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {/* Backend Skills */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Database className="h-6 w-6 mr-2 text-primary" />
+                <CardTitle className="flex items-center text-base md:text-lg">
+                  <Database className="h-5 w-5 md:h-6 md:w-6 mr-2 text-primary" />
                   Backend & APIs
                 </CardTitle>
               </CardHeader>
@@ -425,8 +442,8 @@ const Index = () => {
             {/* Frontend Skills */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Palette className="h-6 w-6 mr-2 text-primary" />
+                <CardTitle className="flex items-center text-base md:text-lg">
+                  <Palette className="h-5 w-5 md:h-6 md:w-6 mr-2 text-primary" />
                   Frontend
                 </CardTitle>
               </CardHeader>
@@ -446,9 +463,9 @@ const Index = () => {
             {/* Tools & Technologies */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Code2 className="h-6 w-6 mr-2 text-primary" />
-                  Tools & Hardware
+                <CardTitle className="flex items-center text-base md:text-lg">
+                  <Code2 className="h-5 w-5 md:h-6 md:w-6 mr-2 text-primary" />
+                  Tools & Technologies
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -468,34 +485,34 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-white dark:bg-gray-900">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">Featured Projects</h2>
+      <section id="projects" className="py-16 md:py-20 bg-white dark:bg-gray-900 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-gray-900 dark:text-white">Featured Projects</h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {projects.map((project, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
+                  <CardTitle className="text-base md:text-lg">{project.title}</CardTitle>
+                  <CardDescription className="text-sm">{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tech.map((tech) => (
-                      <Badge key={tech} variant="secondary">{tech}</Badge>
+                      <Badge key={tech} variant="secondary" className="text-xs">{tech}</Badge>
                     ))}
                   </div>
-                  <div className="flex space-x-4">
-                    <Button variant="outline" size="sm" asChild>
+                  <div className="flex space-x-2 md:space-x-4">
+                    <Button variant="outline" size="sm" className="flex-1" asChild>
                       <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="h-4 w-4 mr-2" />
-                        Code
+                        <Github className="h-4 w-4 mr-1 md:mr-2" />
+                        <span className="hidden sm:inline">Code</span>
                       </a>
                     </Button>
-                    <Button size="sm" asChild>
+                    <Button size="sm" className="flex-1" asChild>
                       <a href={project.live} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Live Demo
+                        <ExternalLink className="h-4 w-4 mr-1 md:mr-2" />
+                        <span className="hidden sm:inline">Live</span>
                       </a>
                     </Button>
                   </div>
@@ -507,37 +524,37 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">Experience & Education</h2>
+      <section id="experience" className="py-16 md:py-20 bg-gray-50 dark:bg-gray-800 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-gray-900 dark:text-white">Experience & Education</h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
             {/* Work Experience */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Briefcase className="h-6 w-6 mr-2 text-primary" />
+                <CardTitle className="flex items-center text-base md:text-lg">
+                  <Briefcase className="h-5 w-5 md:h-6 md:w-6 mr-2 text-primary" />
                   Work Experience
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-6">
                   <div className="border-l-4 border-primary pl-4">
-                    <h3 className="font-semibold text-lg">Hardware Intern</h3>
-                    <p className="text-primary font-medium">Phenomenon Labs - CREW, Cedar College</p>
-                    <p className="text-sm text-gray-500 mb-2">January 2025 - Present • Karachi, Pakistan</p>
-                    <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
-                      <li>• Built Bluetooth-controlled car using Arduino Uno and motor driver</li>
-                      <li>• Practiced soldering and debugging with oscilloscope</li>
-                      <li>• Gained hands-on experience with power tools and hardware troubleshooting</li>
+                    <h3 className="font-semibold text-base md:text-lg">Frontend Developer</h3>
+                    <p className="text-primary font-medium text-sm md:text-base">Portfolio Project</p>
+                    <p className="text-xs md:text-sm text-gray-500 mb-2">January 2024 - Present • Karachi, Pakistan</p>
+                    <ul className="text-xs md:text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                      <li>• Created responsive personal website with HTML, CSS, and JS</li>
+                      <li>• Implemented modal previews and responsive design</li>
+                      <li>• Styled using custom fonts and dark-themed palette</li>
                     </ul>
                   </div>
                   
                   <div className="border-l-4 border-blue-500 pl-4">
-                    <h3 className="font-semibold text-lg">Freelance Python Developer</h3>
-                    <p className="text-blue-500 font-medium">Self-Employed</p>
-                    <p className="text-sm text-gray-500 mb-2">January 2023 - Present • Remote</p>
-                    <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                    <h3 className="font-semibold text-base md:text-lg">Freelance Python Developer</h3>
+                    <p className="text-blue-500 font-medium text-sm md:text-base">Self-Employed</p>
+                    <p className="text-xs md:text-sm text-gray-500 mb-2">January 2023 - Present • Remote</p>
+                    <ul className="text-xs md:text-sm text-gray-600 dark:text-gray-300 space-y-1">
                       <li>• Built Python automation tools using multiple APIs</li>
                       <li>• Developed GUI and CLI applications</li>
                       <li>• Integrated Google Sheets API and SMS/WhatsApp notifications</li>
@@ -545,10 +562,10 @@ const Index = () => {
                   </div>
 
                   <div className="border-l-4 border-green-500 pl-4">
-                    <h3 className="font-semibold text-lg">Teaching Assistant</h3>
-                    <p className="text-green-500 font-medium">Private Tuition</p>
-                    <p className="text-sm text-gray-500 mb-2">January 2023 - January 2024 • Karachi</p>
-                    <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                    <h3 className="font-semibold text-base md:text-lg">Teaching Assistant</h3>
+                    <p className="text-green-500 font-medium text-sm md:text-base">Private Tuition</p>
+                    <p className="text-xs md:text-sm text-gray-500 mb-2">January 2023 - January 2024 • Karachi</p>
+                    <ul className="text-xs md:text-sm text-gray-600 dark:text-gray-300 space-y-1">
                       <li>• Taught programming and mathematics to students</li>
                       <li>• Created simplified learning plans and materials</li>
                     </ul>
@@ -560,73 +577,77 @@ const Index = () => {
             {/* Education */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center">
-                  <GraduationCap className="h-6 w-6 mr-2 text-primary" />
+                <CardTitle className="flex items-center text-base md:text-lg">
+                  <GraduationCap className="h-5 w-5 md:h-6 md:w-6 mr-2 text-primary" />
                   Education
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-6">
                   <div className="border-l-4 border-primary pl-4">
-                    <h3 className="font-semibold text-lg">Cambridge A Levels</h3>
-                    <p className="text-primary font-medium">Cedar College Karachi</p>
-                    <p className="text-sm text-gray-500 mb-2">Expected June 2026 • Computer Science, Mathematics, Physics</p>
-                    <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
+                    <h3 className="font-semibold text-base md:text-lg">Cambridge A Levels</h3>
+                    <p className="text-primary font-medium text-sm md:text-base">Cedar College Karachi</p>
+                    <p className="text-xs md:text-sm text-gray-500 mb-2">Expected June 2026 • Computer Science, Mathematics, Physics</p>
+                    <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 mb-2">
                       Active member of CREW and Cedar CODES clubs. Part of organizing team for Robotics & Physics modules at Scinnova VIII.
                     </p>
                   </div>
 
                   <div className="border-l-4 border-blue-500 pl-4">
-                    <h3 className="font-semibold text-lg">Cambridge O Levels</h3>
-                    <p className="text-blue-500 font-medium">Private Studies Karachi</p>
-                    <p className="text-sm text-gray-500 mb-2">March 2024 • Mathematics, Physics, Chemistry, Computer Science</p>
+                    <h3 className="font-semibold text-base md:text-lg">Cambridge O Levels</h3>
+                    <p className="text-blue-500 font-medium text-sm md:text-base">Private Studies Karachi</p>
+                    <p className="text-xs md:text-sm text-gray-500 mb-2">March 2024 • Mathematics, Physics, Chemistry, Computer Science</p>
                   </div>
 
                   <div className="border-l-4 border-green-500 pl-4">
-                    <h3 className="font-semibold text-lg">Cambridge O Levels</h3>
-                    <p className="text-green-500 font-medium">Happy Home School Karachi</p>
-                    <p className="text-sm text-gray-500 mb-2">August 2023</p>
+                    <h3 className="font-semibold text-base md:text-lg">Cambridge O Levels</h3>
+                    <p className="text-green-500 font-medium text-sm md:text-base">Happy Home School Karachi</p>
+                    <p className="text-xs md:text-sm text-gray-500 mb-2">August 2023</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
             {/* Awards & Certifications */}
-            <Card className="md:col-span-2">
+            <Card className="lg:col-span-2">
               <CardHeader>
-                <CardTitle className="flex items-center">
-                  <Award className="h-6 w-6 mr-2 text-primary" />
+                <CardTitle className="flex items-center text-base md:text-lg">
+                  <Award className="h-5 w-5 md:h-6 md:w-6 mr-2 text-primary" />
                   Awards & Professional Certifications
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="mb-6">
-                  <h4 className="font-semibold mb-3">Awards & Leadership</h4>
-                  <div className="grid md:grid-cols-2 gap-4 mb-6">
-                    <div className="border rounded-lg p-4 bg-yellow-50 dark:bg-yellow-900/20">
-                      <h5 className="font-semibold">CREW & CODES Leadership</h5>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">Shortlisted for leadership positions at Cedar College</p>
+                  <h4 className="font-semibold mb-3 text-sm md:text-base">Awards & Leadership</h4>
+                  <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                    <div className="border rounded-lg p-3 md:p-4 bg-yellow-50 dark:bg-yellow-900/20">
+                      <h5 className="font-semibold text-sm md:text-base">CREW & CODES Leadership</h5>
+                      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300">Shortlisted for leadership positions at Cedar College</p>
                     </div>
-                    <div className="border rounded-lg p-4 bg-blue-50 dark:bg-blue-900/20">
-                      <h5 className="font-semibold">Scinova 2025 Organizer</h5>
-                      <p className="text-sm text-gray-600 dark:text-gray-300">Co-managed Robotics, Physics & Math modules</p>
+                    <div className="border rounded-lg p-3 md:p-4 bg-blue-50 dark:bg-blue-900/20">
+                      <h5 className="font-semibold text-sm md:text-base">Scinova 2025 Organizer</h5>
+                      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300">Co-managed Robotics, Physics & Math modules</p>
                     </div>
                   </div>
                 </div>
                 
                 {/* Visual Certificates Gallery */}
                 <div className="mb-6">
-                  <h4 className="font-semibold mb-3">Certificate Gallery</h4>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <h4 className="font-semibold mb-3 text-sm md:text-base">Certificate Gallery</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {certificateImages.map((cert, index) => (
-                      <div key={index} className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                      <div 
+                        key={index} 
+                        className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+                        onClick={() => setSelectedCertificate(cert.src)}
+                      >
                         <img 
                           src={cert.src} 
                           alt={cert.title}
-                          className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                          className="w-full h-32 md:h-48 object-cover hover:scale-105 transition-transform duration-300"
                         />
-                        <div className="p-3">
-                          <h5 className="font-semibold text-sm">{cert.title}</h5>
+                        <div className="p-2 md:p-3">
+                          <h5 className="font-semibold text-xs md:text-sm">{cert.title}</h5>
                           <p className="text-xs text-primary">{cert.issuer}</p>
                         </div>
                       </div>
@@ -634,13 +655,13 @@ const Index = () => {
                   </div>
                 </div>
                 
-                <h4 className="font-semibold mb-3">Professional Certifications</h4>
-                <div className="grid md:grid-cols-3 gap-4">
+                <h4 className="font-semibold mb-3 text-sm md:text-base">Professional Certifications</h4>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {certifications.map((cert, index) => (
-                    <div key={index} className="border rounded-lg p-4">
-                      <h4 className="font-semibold text-sm">{cert.title}</h4>
-                      <p className="text-sm text-primary">{cert.issuer}</p>
-                      <p className="text-sm text-gray-500">{cert.date}</p>
+                    <div key={index} className="border rounded-lg p-3 md:p-4">
+                      <h4 className="font-semibold text-xs md:text-sm">{cert.title}</h4>
+                      <p className="text-xs md:text-sm text-primary">{cert.issuer}</p>
+                      <p className="text-xs md:text-sm text-gray-500">{cert.date}</p>
                     </div>
                   ))}
                 </div>
@@ -651,10 +672,10 @@ const Index = () => {
       </section>
 
       {/* Resume Section */}
-      <section id="resume" className="py-20 bg-white dark:bg-gray-900">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-8 text-gray-900 dark:text-white">Resume</h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+      <section id="resume" className="py-16 md:py-20 bg-white dark:bg-gray-900 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-gray-900 dark:text-white">Resume</h2>
+          <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 mb-6 md:mb-8">
             Download my complete resume to learn more about my experience, projects, and qualifications as a Python Developer.
           </p>
           <Button size="lg" asChild>
@@ -667,54 +688,54 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">Get In Touch</h2>
+      <section id="contact" className="py-16 md:py-20 bg-gray-50 dark:bg-gray-800 px-4">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-gray-900 dark:text-white">Get In Touch</h2>
           
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
             <div>
-              <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Let's Connect</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-8">
+              <h3 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-gray-900 dark:text-white">Let's Connect</h3>
+              <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-6 md:mb-8">
                 I'm always interested in hearing about new opportunities, exciting projects, and collaboration possibilities. 
                 Whether you want to discuss Python automation, web development, or just say hi, I'll try my best to get back to you!
               </p>
               
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <Mail className="h-5 w-5 text-primary mr-3" />
-                  <span className="text-gray-700 dark:text-gray-300">abdulrehmanmarfani84@gmail.com</span>
+                  <Mail className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
+                  <span className="text-sm md:text-base text-gray-700 dark:text-gray-300 break-all">abdulrehmanmarfani84@gmail.com</span>
                 </div>
                 <div className="flex items-center">
                   <Phone className="h-5 w-5 text-primary mr-3" />
-                  <span className="text-gray-700 dark:text-gray-300">+92 3473752831</span>
+                  <span className="text-sm md:text-base text-gray-700 dark:text-gray-300">+92 3473752831</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="h-5 w-5 text-primary mr-3" />
-                  <span className="text-gray-700 dark:text-gray-300">Karachi, Pakistan</span>
+                  <span className="text-sm md:text-base text-gray-700 dark:text-gray-300">Karachi, Pakistan</span>
                 </div>
               </div>
             </div>
             
             <Card>
               <CardHeader>
-                <CardTitle>Send a Message</CardTitle>
+                <CardTitle className="text-base md:text-lg">Send a Message</CardTitle>
               </CardHeader>
               <CardContent>
                 <form className="space-y-4">
                   <div>
-                    <Label htmlFor="name">Name</Label>
+                    <Label htmlFor="name" className="text-sm md:text-base">Name</Label>
                     <Input id="name" placeholder="Your name" />
                   </div>
                   <div>
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email" className="text-sm md:text-base">Email</Label>
                     <Input id="email" type="email" placeholder="your.email@example.com" />
                   </div>
                   <div>
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="message" className="text-sm md:text-base">Message</Label>
                     <textarea
                       id="message"
                       rows={4}
-                      className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring"
+                      className="w-full px-3 py-2 border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring text-sm md:text-base"
                       placeholder="Your message..."
                     />
                   </div>
@@ -729,23 +750,23 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
+      <footer className="bg-gray-900 text-white py-8 md:py-12 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Abdul Rehman Marfani</h3>
-              <p className="text-gray-400">
+              <h3 className="text-lg md:text-xl font-bold mb-4">Abdul Rehman Marfani</h3>
+              <p className="text-sm md:text-base text-gray-400">
                 Python Developer passionate about automation, web development, and creating innovative solutions.
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <h4 className="font-semibold mb-4 text-sm md:text-base">Quick Links</h4>
               <div className="space-y-2">
                 {['About', 'Skills', 'Projects', 'Experience', 'Contact'].map((item) => (
                   <button
                     key={item}
                     onClick={() => scrollToSection(item.toLowerCase())}
-                    className="block text-gray-400 hover:text-white transition-colors"
+                    className="block text-sm md:text-base text-gray-400 hover:text-white transition-colors"
                   >
                     {item}
                   </button>
@@ -753,7 +774,7 @@ const Index = () => {
               </div>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Connect</h4>
+              <h4 className="font-semibold mb-4 text-sm md:text-base">Connect</h4>
               <div className="flex space-x-4">
                 <Button variant="ghost" size="icon" asChild>
                   <a href="https://github.com/abdulrehmanmarfani" target="_blank" rel="noopener noreferrer">
@@ -778,8 +799,8 @@ const Index = () => {
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Abdul Rehman Marfani. All rights reserved. Built with React & Tailwind CSS.</p>
+          <div className="border-t border-gray-800 mt-6 md:mt-8 pt-6 md:pt-8 text-center text-gray-400">
+            <p className="text-xs md:text-sm">&copy; 2024 Abdul Rehman Marfani. All rights reserved. Built with React & Tailwind CSS.</p>
           </div>
         </div>
       </footer>
