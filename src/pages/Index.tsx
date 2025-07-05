@@ -522,12 +522,6 @@ const Index = () => {
                         <span className="hidden sm:inline">Code</span>
                       </a>
                     </Button>
-                    <Button size="sm" className="flex-1" asChild>
-                      <a href={project.live} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4 mr-1 md:mr-2" />
-                        <span className="hidden sm:inline">Live</span>
-                      </a>
-                    </Button>
                   </div>
                 </CardContent>
               </Card>
