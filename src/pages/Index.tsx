@@ -164,65 +164,44 @@ const Index = () => {
     {
       src: '/lovable-uploads/198db4a9-86f5-427b-9641-18d8a9350267.png',
       title: 'Python Course - Kaggle',
-      issuer: 'Kaggle'
+      issuer: 'Kaggle',
+      date: '2023',
+      credentialId: 'KAGGLE-PY-01'
     },
     {
       src: '/lovable-uploads/afd615f2-8af3-4838-a9c2-54ec7b0f3d22.png',
-      title: 'Crash Course on Python',
-      issuer: 'Google'
-    },
-    {
-      src: '/lovable-uploads/785b7b38-7f47-435d-8967-072da1b36a5b.png',
-      title: 'Python for Data Science, AI & Development',
-      issuer: 'IBM'
-    },
-    {
-      src: '/lovable-uploads/58ff92f1-3b51-4a39-94d7-04e7d2fe7e9f.png',
-      title: 'Introduction to Python',
-      issuer: 'Data Flair'
-    },
-    {
-      src: '/lovable-uploads/135ed8d5-f2d4-4278-8bb7-aed77d9297b8.png',
-      title: 'Python Essentials 1',
-      issuer: 'Cisco Networking Academy'
-    },
-    {
-      src: '/lovable-uploads/42b053d9-45a6-4294-9a5d-be7f40656bd0.png',
-      title: 'Python Essentials 2',
-      issuer: 'Cisco Networking Academy'
-    }
-  ];
-
-  const certifications = [
-    {
       title: 'Crash Course on Python',
       issuer: 'Google',
       date: '2023',
       credentialId: 'GOOGLE-PY-001'
     },
     {
+      src: '/lovable-uploads/785b7b38-7f47-435d-8967-072da1b36a5b.png',
       title: 'Python for Data Science, AI & Development',
       issuer: 'IBM',
       date: '2023',
       credentialId: 'IBM-DS-001'
     },
     {
-      title: 'Python Essentials 1 & 2',
-      issuer: 'Cisco Networking Academy',
-      date: '2023',
-      credentialId: 'CISCO-PY-12'
-    },
-    {
+      src: '/lovable-uploads/58ff92f1-3b51-4a39-94d7-04e7d2fe7e9f.png',
       title: 'Introduction to Python',
       issuer: 'Data Flair',
       date: '2023',
       credentialId: 'DF-PY-001'
     },
     {
-      title: 'Python Course',
-      issuer: 'Kaggle',
+      src: '/lovable-uploads/135ed8d5-f2d4-4278-8bb7-aed77d9297b8.png',
+      title: 'Python Essentials 1',
+      issuer: 'Cisco Networking Academy',
       date: '2023',
-      credentialId: 'KAGGLE-PY-01'
+      credentialId: 'CISCO-PY-1'
+    },
+    {
+      src: '/lovable-uploads/42b053d9-45a6-4294-9a5d-be7f40656bd0.png',
+      title: 'Python Essentials 2',
+      issuer: 'Cisco Networking Academy',
+      date: '2023',
+      credentialId: 'CISCO-PY-2'
     }
   ];
 
@@ -642,7 +621,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            {/* Awards & Certifications */}
+            {/* Awards & Professional Certifications */}
             <Card className="lg:col-span-2">
               <CardHeader>
                 <CardTitle className="flex items-center text-base md:text-lg">
@@ -665,9 +644,9 @@ const Index = () => {
                   </div>
                 </div>
                 
-                {/* Visual Certificates Gallery */}
-                <div className="mb-6">
-                  <h4 className="font-semibold mb-3 text-sm md:text-base">Certificate Gallery</h4>
+                {/* Professional Certifications Gallery */}
+                <div>
+                  <h4 className="font-semibold mb-3 text-sm md:text-base">Professional Certifications</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {certificateImages.map((cert, index) => (
                       <div 
@@ -683,21 +662,14 @@ const Index = () => {
                         <div className="p-2 md:p-3">
                           <h5 className="font-semibold text-xs md:text-sm">{cert.title}</h5>
                           <p className="text-xs text-primary">{cert.issuer}</p>
+                          <div className="flex justify-between items-center mt-1">
+                            <p className="text-xs text-gray-500">{cert.date}</p>
+                            <p className="text-xs text-gray-400">ID: {cert.credentialId}</p>
+                          </div>
                         </div>
                       </div>
                     ))}
                   </div>
-                </div>
-                
-                <h4 className="font-semibold mb-3 text-sm md:text-base">Professional Certifications</h4>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {certifications.map((cert, index) => (
-                    <div key={index} className="border rounded-lg p-3 md:p-4">
-                      <h4 className="font-semibold text-xs md:text-sm">{cert.title}</h4>
-                      <p className="text-xs md:text-sm text-primary">{cert.issuer}</p>
-                      <p className="text-xs md:text-sm text-gray-500">{cert.date}</p>
-                    </div>
-                  ))}
                 </div>
               </CardContent>
             </Card>
