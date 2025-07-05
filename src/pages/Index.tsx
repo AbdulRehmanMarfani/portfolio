@@ -516,12 +516,18 @@ const Index = () => {
                     ))}
                   </div>
                   <div className="flex space-x-2 md:space-x-4">
-                    <Button variant="outline" size="sm" className="flex-1" asChild>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="h-4 w-4 mr-1 md:mr-2" />
-                        <span className="hidden sm:inline">Code</span>
-                      </a>
-                    </Button>
+                    {project.title === 'Portfolio Website' ? (
+                      <Button variant="outline" size="sm" className="flex-1" disabled>
+                        You are already here
+                      </Button>
+                    ) : (
+                      <Button variant="outline" size="sm" className="flex-1" asChild>
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="h-4 w-4 mr-1 md:mr-2" />
+                          <span className="hidden sm:inline">Code</span>
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -679,7 +685,7 @@ const Index = () => {
             Download my complete resume to learn more about my experience, projects, and qualifications as a Python Developer.
           </p>
           <Button size="lg" asChild>
-            <a href="/resume.pdf" download>
+            <a href="/Abdul%20Rehman%20Marfani%20Resume.pdf" download>
               <Download className="h-5 w-5 mr-2" />
               Download Resume (PDF)
             </a>
