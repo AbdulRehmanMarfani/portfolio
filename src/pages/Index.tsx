@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -90,17 +89,66 @@ const Index = () => {
 
   const projects = [
     {
-      title: 'Flight Deal Finder',
-      description: 'Automated tool that scrapes airfare deals and sends alerts using Google Sheets & Tequila API',
-      tech: ['Python', 'Google Sheets API', 'Tequila API', 'Twilio'],
-      github: '#',
+      title: 'Exercise Tracker',
+      description: 'GUI application that tracks workouts and logs them to Google Sheets using Nutritionix API for exercise data',
+      tech: ['Python', 'Tkinter', 'Google Sheets API', 'Nutritionix API'],
+      github: 'https://github.com/AbdulRehmanMarfani/Exercise-Tracker',
       live: '#'
     },
     {
-      title: 'Stock Alert + News System',
-      description: 'Monitors stock price changes and sends news summaries via SMS notifications',
+      title: 'Trading News Alert',
+      description: 'Automated system that monitors stock price changes and sends relevant news alerts via SMS notifications',
       tech: ['Python', 'Alpha Vantage API', 'NewsAPI', 'Twilio'],
-      github: '#',
+      github: 'https://github.com/AbdulRehmanMarfani/Trading-News-Alert',
+      live: '#'
+    },
+    {
+      title: 'Rain Alert',
+      description: 'Weather monitoring application that sends SMS alerts when rain is forecasted in your area',
+      tech: ['Python', 'OpenWeatherMap API', 'Twilio', 'Automation'],
+      github: 'https://github.com/AbdulRehmanMarfani/Rain-Alert',
+      live: '#'
+    },
+    {
+      title: 'Quiz App',
+      description: 'Interactive quiz application with multiple categories and difficulty levels built with Python',
+      tech: ['Python', 'Tkinter', 'JSON', 'GUI Design'],
+      github: 'https://github.com/AbdulRehmanMarfani/Quiz-App',
+      live: '#'
+    },
+    {
+      title: 'ISS Overhead Notifier',
+      description: 'Tracks the International Space Station and sends notifications when it passes overhead your location',
+      tech: ['Python', 'ISS API', 'Email', 'Automation'],
+      github: 'https://github.com/AbdulRehmanMarfani/ISS-Overhead-Notifier',
+      live: '#'
+    },
+    {
+      title: 'Flash Card App',
+      description: 'Digital flashcard application for language learning with spaced repetition algorithm',
+      tech: ['Python', 'Tkinter', 'CSV', 'Learning Algorithm'],
+      github: 'https://github.com/AbdulRehmanMarfani/Flash-Card-App',
+      live: '#'
+    },
+    {
+      title: 'Pomodoro Timer',
+      description: 'GUI-based productivity timer application implementing the Pomodoro Technique for better focus',
+      tech: ['Python', 'Tkinter', 'GUI Design', 'Productivity'],
+      github: 'https://github.com/AbdulRehmanMarfani/Pomodoro-GUI-Application',
+      live: '#'
+    },
+    {
+      title: 'US States Guessing Game',
+      description: 'Interactive educational game where players guess US states on a map with score tracking',
+      tech: ['Python', 'Turtle Graphics', 'Pandas', 'Game Development'],
+      github: 'https://github.com/AbdulRehmanMarfani/US-States-Guessing-Game',
+      live: '#'
+    },
+    {
+      title: 'Snake Game',
+      description: 'Classic Snake game implementation with score tracking and smooth gameplay mechanics',
+      tech: ['Python', 'Turtle Graphics', 'Game Development', 'OOP'],
+      github: 'https://github.com/AbdulRehmanMarfani/Snake-Game',
       live: '#'
     },
     {
@@ -109,20 +157,6 @@ const Index = () => {
       tech: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
       github: 'https://github.com/abdulrehmanmarfani/portfolio',
       live: 'https://abdulrehmanmarfani.github.io/portfolio/'
-    },
-    {
-      title: 'Workout Logger',
-      description: 'GUI application that parses and logs workouts to Google Sheets using Nutritionix API',
-      tech: ['Python', 'Tkinter', 'Google Sheets API', 'Nutritionix'],
-      github: '#',
-      live: '#'
-    },
-    {
-      title: 'Pomodoro Timer',
-      description: 'GUI-based productivity timer application built with Python Tkinter',
-      tech: ['Python', 'Tkinter', 'GUI Design'],
-      github: '#',
-      live: '#'
     }
   ];
 
