@@ -28,7 +28,7 @@ import {
 } from 'lucide-react';
 
 const Index = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true); // Set default to dark
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [typedText, setTypedText] = useState('');
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null);
@@ -162,42 +162,42 @@ const Index = () => {
 
   const certificateImages = [
     {
-      src: '/lovable-uploads/198db4a9-86f5-427b-9641-18d8a9350267.png',
+      src: '/portfolio/lovable-uploads/198db4a9-86f5-427b-9641-18d8a9350267.png',
       title: 'Python Course - Kaggle',
       issuer: 'Kaggle',
       date: '2023',
       credentialId: 'KAGGLE-PY-01'
     },
     {
-      src: '/lovable-uploads/afd615f2-8af3-4838-a9c2-54ec7b0f3d22.png',
+      src: '/portfolio/lovable-uploads/afd615f2-8af3-4838-a9c2-54ec7b0f3d22.png',
       title: 'Crash Course on Python',
       issuer: 'Google',
       date: '2023',
       credentialId: 'GOOGLE-PY-001'
     },
     {
-      src: '/lovable-uploads/785b7b38-7f47-435d-8967-072da1b36a5b.png',
+      src: '/portfolio/lovable-uploads/785b7b38-7f47-435d-8967-072da1b36a5b.png',
       title: 'Python for Data Science, AI & Development',
       issuer: 'IBM',
       date: '2023',
       credentialId: 'IBM-DS-001'
     },
     {
-      src: '/lovable-uploads/58ff92f1-3b51-4a39-94d7-04e7d2fe7e9f.png',
+      src: '/portfolio/lovable-uploads/58ff92f1-3b51-4a39-94d7-04e7d2fe7e9f.png',
       title: 'Introduction to Python',
       issuer: 'Data Flair',
       date: '2023',
       credentialId: 'DF-PY-001'
     },
     {
-      src: '/lovable-uploads/135ed8d5-f2d4-4278-8bb7-aed77d9297b8.png',
+      src: '/portfolio/lovable-uploads/135ed8d5-f2d4-4278-8bb7-aed77d9297b8.png',
       title: 'Python Essentials 1',
       issuer: 'Cisco Networking Academy',
       date: '2023',
       credentialId: 'CISCO-PY-1'
     },
     {
-      src: '/lovable-uploads/42b053d9-45a6-4294-9a5d-be7f40656bd0.png',
+      src: '/portfolio/lovable-uploads/42b053d9-45a6-4294-9a5d-be7f40656bd0.png',
       title: 'Python Essentials 2',
       issuer: 'Cisco Networking Academy',
       date: '2023',
@@ -379,7 +379,7 @@ const Index = () => {
               {/* Profile Image */}
               <div className="relative overflow-hidden rounded-lg">
                 <img 
-                  src="/lovable-uploads/46b6d654-d282-454f-bacc-9c6d47b1b985.png" 
+                  src="/portfolio/lovable-uploads/46b6d654-d282-454f-bacc-9c6d47b1b985.png" 
                   alt="Abdul Rehman Marfani - Python Developer"
                   className="w-full h-auto object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-300 filter contrast-110 brightness-110"
                 />
@@ -685,7 +685,7 @@ const Index = () => {
             Download my complete resume to learn more about my experience, projects, and qualifications as a Python Developer.
           </p>
           <Button size="lg" asChild>
-            <a href="/Abdul%20Rehman%20Marfani%20Resume.pdf" download>
+            <a href="/portfolio/Abdul%20Rehman%20Marfani%20Resume.pdf" download>
               <Download className="h-5 w-5 mr-2" />
               Download Resume (PDF)
             </a>
@@ -806,7 +806,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-6 md:mt-8 pt-6 md:pt-8 text-center text-gray-400">
-            <p className="text-xs md:text-sm">&copy; 2024 Abdul Rehman Marfani. All rights reserved. Built with React & Tailwind CSS.</p>
+            <p className="text-xs md:text-sm">&copy; 2025 Abdul Rehman Marfani. All rights reserved.</p>
           </div>
         </div>
       </footer>
