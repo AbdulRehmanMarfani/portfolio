@@ -154,6 +154,3 @@ Visual display of key certifications, including:
 ---
 
 
-
-Let me know if you want this version in `.md` format for local documentation or for use in a private GitHub repo (as a private README).
-
