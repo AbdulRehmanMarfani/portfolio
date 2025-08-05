@@ -2,7 +2,7 @@
 
 ---
 
-# Abdul Rehman's Portfolio Website – README (Private Project)
+# Abdul Rehman's Portfolio Website 
 
 This is a **private, fully developed personal portfolio website** for **Abdul Rehman**, a Python Developer based in Karachi, Pakistan. The website serves as a professional showcase of his projects, skills, certifications, and experiences in programming and automation.
 
