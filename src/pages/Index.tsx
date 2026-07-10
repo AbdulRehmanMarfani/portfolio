@@ -52,9 +52,9 @@ export default function Index() {
       <nav className="sticky top-0 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="font-bold text-lg sm:text-xl text-primary">
-              Abdul Rehman
-            </div>
+              <div className="font-bold text-lg sm:text-xl" style={{ color: darkMode ? '#FFFFFF' : '#1F2937' }}>
+                Abdul Rehman
+              </div>
             <div className="hidden md:flex space-x-8">
               {['Home', 'About', 'Skills', 'Projects', 'Experience', 'Resume', 'Contact'].map((item) => (
                 <button
@@ -140,7 +140,8 @@ export default function Index() {
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-primary hover:underline"
+                  className="hover:underline"
+                  style={{ color: darkMode ? '#FFFFFF' : '#1F2937' }}
                   onClick={(e) => {
                     e.preventDefault();
                     scrollToSection(item.toLowerCase());
