@@ -629,15 +629,15 @@ export default function Index() {
                     backgroundColor: darkMode ? 'rgba(244, 196, 48, 0.1)' : '#FFF9E6',
                     borderColor: darkMode ? '#F4C430' : '#F3E3A3'
                   }}>
-                    <h5 className="font-semibold text-sm md:text-base" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>CREW & CODES Leadership</h5>
-                    <p className="text-xs md:text-sm" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>Shortlisted for leadership positions at Cedar College</p>
+                    <h5 className="font-semibold text-sm md:text-base" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Dean's List</h5>
+                    <p className="text-xs md:text-sm" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>Awarded for outstanding academic performance at Cedar College.</p>
                   </div>
                   <div className="border rounded-lg p-3 md:p-4 transition-all duration-300" style={{ 
                     backgroundColor: darkMode ? 'rgba(59, 130, 246, 0.1)' : '#EEF5FF',
                     borderColor: darkMode ? '#3B82F6' : '#D7E6FF'
                   }}>
-                    <h5 className="font-semibold text-sm md:text-base" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Scinova 2025 Organizer</h5>
-                    <p className="text-xs md:text-sm" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>Co-managed Robotics, Physics & Math modules</p>
+                    <h5 className="font-semibold text-sm md:text-base" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Honour Roll</h5>
+                    <p className="text-xs md:text-sm" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>Recognized for consistent academic excellence throughout my A Levels.</p>
                   </div>
                 </div>
               </div>
