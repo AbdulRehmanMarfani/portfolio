@@ -226,7 +226,9 @@ export default function Index() {
               <div className="space-y-4">
                 {[
                   { name: 'Python', level: 95 },
-                  { name: 'APIs Integration', level: 90 },
+                  { name: 'REST APIs', level: 90 },
+                  { name: 'FastAPI', level: 88 },
+                  { name: 'Scikit-learn', level: 82 },
                   { name: 'Pandas', level: 85 },
                   { name: 'NumPy', level: 85 },
                   { name: 'BeautifulSoup', level: 88 },
@@ -254,11 +256,14 @@ export default function Index() {
               </h3>
               <div className="space-y-4">
                 {[
+                  { name: 'React 18', level: 90 },
+                  { name: 'TypeScript', level: 85 },
                   { name: 'JavaScript (ES6+)', level: 85 },
+                  { name: 'Tailwind CSS', level: 88 },
                   { name: 'HTML5', level: 90 },
                   { name: 'CSS3', level: 88 },
-                  { name: 'Bootstrap', level: 70 },
                   { name: 'Responsive Design', level: 85 },
+                  { name: 'Bootstrap', level: 70 },
                 ].map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between mb-1">
@@ -284,6 +289,8 @@ export default function Index() {
               <div className="space-y-4">
                 {[
                   { name: 'Git', level: 85 },
+                  { name: 'Electron', level: 80 },
+                  { name: 'WebSockets', level: 82 },
                   { name: 'VS Code', level: 90 },
                   { name: 'Bash', level: 75 },
                   { name: 'Tkinter', level: 80 },
