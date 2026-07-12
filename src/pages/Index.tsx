@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Github, Linkedin, Instagram, Mail, Moon, Sun, Menu, X, Code2, Palette, Database, ExternalLink, Briefcase, GraduationCap, Phone, MapPin, Download, Award } from 'lucide-react';
 
-const roles = ['Python Developer', 'Frontend Developer', 'Aspiring Full-Stack Engineer'];
+const roles = ['Software Engineer', 'AI Applications Developer', 'Full-Stack Builder'];
 
 export default function Index() {
   const [darkMode, setDarkMode] = useState(true);
@@ -132,7 +132,7 @@ export default function Index() {
               <span>from Karachi, Pakistan.</span>
               <span className="flex items-center gap-2">
                 <Mail className="inline h-4 w-4 text-gray-500 dark:text-gray-400" />
-                Freelance Python Developer
+                Software Engineer & Full-Stack Builder
               </span>
             </div>
             <div className="flex space-x-6 mt-4">
@@ -186,7 +186,7 @@ export default function Index() {
             <div>
               <div className="w-48 md:w-64 h-48 md:h-64 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg">
                 <img
-                  src="/portfolio/lovable-uploads/ChatGPT Image Jul 7, 2025, 06_45_24 PM.png"
+                  src="/portfolio/lovable-uploads/image.png"
                   alt="Abdul Rehman"
                   className="w-full h-full object-cover"
                 />
@@ -194,14 +194,14 @@ export default function Index() {
             </div>
             <div>
               <p className="text-base md:text-lg text-gray-2000 dark:text-gray-300 mb-6">
-                I'm a dynamic Python Developer with a strong foundation in web development and automation. Currently pursuing my Cambridge A Levels in Computer Science, Mathematics, and Physics at Cedar College.
+                I'm a Software Engineer and AI Applications Developer with a strong foundation in full-stack development, automation, and machine learning. I completed my Cambridge A Levels in Mathematics, Physics, and Computer Science at Cedar College (Graduated June 2026).
               </p>
               <p className="text-base md:text-lg text-black dark:text-gray-300 mb-6">
-                I excel in creating innovative solutions through Python automation, API integrations, and building responsive web applications. My passion lies in solving complex problems and fostering collaboration in tech communities.
+                I build end-to-end applications spanning React and TypeScript front-ends, FastAPI back-ends, and AI-powered features using tools like Whisper and Hugging Face. My passion lies in solving complex problems and fostering collaboration in tech communities.
               </p>
               <div className="bg-gray-50 dark:bg-gray-800 p-4 md:p-6 rounded-lg border-l-4 border-primary">
                 <p className="text-gray-700 dark:text-gray-300 italic text-sm md:text-base">
-                  "Python automation and API integration enthusiast, always eager to learn and build innovative solutions."
+                  "AI applications developer and full-stack builder, always eager to learn and build innovative solutions."
                 </p>
               </div>
             </div>
@@ -226,7 +226,9 @@ export default function Index() {
               <div className="space-y-4">
                 {[
                   { name: 'Python', level: 95 },
-                  { name: 'APIs Integration', level: 90 },
+                  { name: 'REST APIs', level: 90 },
+                  { name: 'FastAPI', level: 88 },
+                  { name: 'Scikit-learn', level: 82 },
                   { name: 'Pandas', level: 85 },
                   { name: 'NumPy', level: 85 },
                   { name: 'BeautifulSoup', level: 88 },
@@ -254,11 +256,14 @@ export default function Index() {
               </h3>
               <div className="space-y-4">
                 {[
+                  { name: 'React 18', level: 90 },
+                  { name: 'TypeScript', level: 85 },
                   { name: 'JavaScript (ES6+)', level: 85 },
+                  { name: 'Tailwind CSS', level: 88 },
                   { name: 'HTML5', level: 90 },
                   { name: 'CSS3', level: 88 },
-                  { name: 'Bootstrap', level: 70 },
                   { name: 'Responsive Design', level: 85 },
+                  { name: 'Bootstrap', level: 70 },
                 ].map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between mb-1">
@@ -284,6 +289,8 @@ export default function Index() {
               <div className="space-y-4">
                 {[
                   { name: 'Git', level: 85 },
+                  { name: 'Electron', level: 80 },
+                  { name: 'WebSockets', level: 82 },
                   { name: 'VS Code', level: 90 },
                   { name: 'Bash', level: 75 },
                   { name: 'Tkinter', level: 80 },
@@ -311,6 +318,20 @@ export default function Index() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-gray-900 dark:text-white">Featured Projects</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
+              {
+                title: 'Memora',
+                description: 'Local-first desktop app for offline academic document processing, featuring a local Whisper transcription pipeline, async file handling, and durable SQLite storage.',
+                tech: ['Electron', 'React', 'TypeScript', 'FastAPI', 'Whisper', 'SQLite'],
+                github: '',
+                live: '',
+              },
+              {
+                title: 'AI Race Engineer',
+                description: 'Multi-agent race strategy engine for the Toyota GR Cup using the Gemini API, with a low-latency FastAPI and WebSockets telemetry pipeline feeding a real-time dashboard.',
+                tech: ['Gemini API', 'FastAPI', 'WebSockets', 'Tailwind CSS', 'Framer Motion'],
+                github: '',
+                live: '',
+              },
               {
                 title: 'ClariNote',
                 description: 'All-in-one focus and study workspace with Pomodoro timer, flashcards, progress tracking, and an AI assistant.',
@@ -415,6 +436,16 @@ export default function Index() {
                           You are already here
                         </button>
                       </div>
+                    ) : (project.title === 'Memora' || project.title === 'AI Race Engineer') ? (
+                      <div className="w-full">
+                        <button disabled className="w-full rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 px-4 py-2" style={{ 
+                          backgroundColor: darkMode ? 'transparent' : '#FFFFFF',
+                          color: darkMode ? '#F5F7FA' : '#111827',
+                          border: `1px solid ${darkMode ? '#263248' : '#D7DFEA'}`
+                        }}>
+                          Private Project
+                        </button>
+                      </div>
                     ) : (
                       <>
                         {project.github && project.github !== '#' && (
@@ -458,9 +489,52 @@ export default function Index() {
             }}>
               <h3 className="text-xl font-semibold mb-4 flex items-center" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>
                 <Briefcase className="h-5 w-5 mr-2" style={{ color: darkMode ? '#F5F7FA' : '#111827' }} />
-                Work Experience
+                Experience & Leadership
               </h3>
               <div className="space-y-6">
+                <div className="pl-4" style={{ borderLeft: `4px solid ${darkMode ? '#F4C430' : '#EAB308'}` }}>
+                  <h3 className="font-semibold text-base md:text-lg" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Chief Operating Officer</h3>
+                  <p className="font-medium text-sm md:text-base" style={{ color: darkMode ? '#F4C430' : '#EAB308' }}>Cedar CODES</p>
+                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#6F788A' : '#6B7280' }}>September 2025 - Present • Cedar College</p>
+                  <ul className="text-xs md:text-sm space-y-1" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>
+                    <li>• Direct operations for a 50-member student tech society, coordinating event production, outreach campaigns, and technical curricula across a 14-member executive board</li>
+                    <li>• Spearheaded organizational and logistics strategy that won the school's prestigious annual SCORE Award Trophy</li>
+                  </ul>
+                </div>
+                <div className="pl-4" style={{ borderLeft: `4px solid ${darkMode ? '#3B82F6' : '#3B82F6'}` }}>
+                  <h3 className="font-semibold text-base md:text-lg" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Module Co-Lead — QWERTY</h3>
+                  <p className="font-medium text-sm md:text-base" style={{ color: darkMode ? '#3B82F6' : '#3B82F6' }}>Scinova Science Olympiad IX</p>
+                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#6F788A' : '#6B7280' }}>January 2026 • 250+ Attendees</p>
+                  <ul className="text-xs md:text-sm space-y-1" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>
+                    <li>• Co-led the launch of Scinova IX's first computer science module, QWERTY; designed competitive programming tasks and event flow for 250+ attendees</li>
+                    <li>• Presented winning participants at the closing ceremony and supported judging criteria for module evaluation</li>
+                  </ul>
+                </div>
+                <div className="pl-4" style={{ borderLeft: `4px solid ${darkMode ? '#22C55E' : '#22C55E'}` }}>
+                  <h3 className="font-semibold text-base md:text-lg" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Junior Executive</h3>
+                  <p className="font-medium text-sm md:text-base" style={{ color: darkMode ? '#22C55E' : '#22C55E' }}>Scinova Science Olympiad VIII</p>
+                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#6F788A' : '#6B7280' }}>January 2025 • 250+ Attendees</p>
+                  <ul className="text-xs md:text-sm space-y-1" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>
+                    <li>• Supported modular planning and logistical coordination across Physics, Robotics, and Mathematics tracks for 250+ student attendees</li>
+                  </ul>
+                </div>
+                <div className="pl-4" style={{ borderLeft: `4px solid ${darkMode ? '#F5F7FA' : '#182238'}` }}>
+                  <h3 className="font-semibold text-base md:text-lg" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Co-Lead & Workshop Facilitator</h3>
+                  <p className="font-medium text-sm md:text-base" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Hackpocalypse 2025</p>
+                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#6F788A' : '#6B7280' }}>2025 • 110+ Participants</p>
+                  <ul className="text-xs md:text-sm space-y-1" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>
+                    <li>• Co-led event operations, registration pipelines, and schedule management for a hackathon with 110+ participants</li>
+                    <li>• Designed and facilitated a hands-on Pygame workshop introducing students to game development and software fundamentals</li>
+                  </ul>
+                </div>
+                <div className="pl-4" style={{ borderLeft: `4px solid ${darkMode ? '#3B82F6' : '#3B82F6'}` }}>
+                  <h3 className="font-semibold text-base md:text-lg" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Co-Lead</h3>
+                  <p className="font-medium text-sm md:text-base" style={{ color: darkMode ? '#3B82F6' : '#3B82F6' }}>Daydream Karachi</p>
+                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#6F788A' : '#6B7280' }}>2024 • 1,000+ Attendees</p>
+                  <ul className="text-xs md:text-sm space-y-1" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>
+                    <li>• Managed live operations, supplier logistics, and venue scheduling for a student festival hosting 1,000+ attendees</li>
+                  </ul>
+                </div>
                 <div className="pl-4" style={{ borderLeft: `4px solid ${darkMode ? '#F4C430' : '#EAB308'}` }}>
                   <h3 className="font-semibold text-base md:text-lg" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Data Science Intern (Virtual)</h3>
                   <p className="font-medium text-sm md:text-base" style={{ color: darkMode ? '#F4C430' : '#EAB308' }}>British Airways (Forage)</p>
@@ -516,8 +590,8 @@ export default function Index() {
                 <div className="pl-4" style={{ borderLeft: `4px solid ${darkMode ? '#3B82F6' : '#3B82F6'}` }}>
                   <h3 className="font-semibold text-base md:text-lg" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Cambridge A Levels</h3>
                   <p className="font-medium text-sm md:text-base" style={{ color: darkMode ? '#3B82F6' : '#3B82F6' }}>Cedar College Karachi</p>
-                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#6F788A' : '#6B7280' }}>Expected June 2026 • Computer Science, Mathematics, Physics</p>
-                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>Active member of CREW and Cedar CODES clubs. Part of organizing team for Robotics & Physics modules at Scinnova VIII.</p>
+                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#6F788A' : '#6B7280' }}>Graduated June 2026 • Mathematics, Physics, Computer Science</p>
+                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>Achieved Straight A Grades at AS Level • Dean's List • Honour Roll. Active member of CREW and Cedar CODES clubs; part of the organizing team for Robotics & Physics modules at Scinova VIII.</p>
                 </div>
                 <div className="pl-4" style={{ borderLeft: `4px solid ${darkMode ? '#22C55E' : '#22C55E'}` }}>
                   <h3 className="font-semibold text-base md:text-lg" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Cambridge O Levels</h3>
@@ -572,12 +646,13 @@ export default function Index() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {[
                     { src: '/portfolio/lovable-uploads/198db4a9-86f5-427b-9641-18d8a9350267.png', title: 'Python Course - Kaggle', issuer: 'Kaggle', date: '2023', credentialId: 'KAGGLE-PY-01' },
-                    { src: '/portfolio/lovable-uploads/afd615f2-8af3-4838-a9c2-54ec7b0f3d22.png', title: 'Crash Course on Python', issuer: 'Google', date: '2023', credentialId: 'GOOGLE-PY-001' },
-                    { src: '/portfolio/lovable-uploads/785b7b38-7f47-435d-8967-072da1b36a5b.png', title: 'Python for Data Science, AI & Development', issuer: 'IBM', date: '2023', credentialId: 'IBM-DS-001' },
+                    { src: '/portfolio/lovable-uploads/afd615f2-8af3-4838-a9c2-54ec7b0f3d22.png', title: 'Crash Course on Python', issuer: 'Google', date: 'Sep 2023', credentialId: 'GOOGLE-PY-001' },
+                    { src: '/portfolio/lovable-uploads/785b7b38-7f47-435d-8967-072da1b36a5b.png', title: 'Python for Data Science, AI & Development', issuer: 'IBM', date: 'Oct 2023', credentialId: 'IBM-DS-001' },
                     { src: '/portfolio/lovable-uploads/58ff92f1-3b51-4a39-94d7-04e7d2fe7e9f.png', title: 'Introduction to Python', issuer: 'Data Flair', date: '2023', credentialId: 'DF-PY-001' },
-                    { src: '/portfolio/lovable-uploads/135ed8d5-f2d4-4278-8bb7-aed77d9297b8.png', title: 'Python Essentials 1', issuer: 'Cisco Networking Academy', date: '2023', credentialId: 'CISCO-PY-1' },
-                    { src: '/portfolio/lovable-uploads/42b053d9-45a6-4294-9a5d-be7f40656bd0.png', title: 'Python Essentials 2', issuer: 'Cisco Networking Academy', date: '2023', credentialId: 'CISCO-PY-2' },
-                    { src: '/portfolio/lovable-uploads/british-airways-forage-ds-certificate.jpg', title: 'Data Science Job Simulation', issuer: 'British Airways (Forage)', date: '2025', credentialId: 'Z2c6B5Nav2ETJkXrw' },
+                    { src: '/portfolio/lovable-uploads/135ed8d5-f2d4-4278-8bb7-aed77d9297b8.png', title: 'Python Essentials 1', issuer: 'Cisco Networking Academy', date: 'Sep 2023', credentialId: 'CISCO-PY-1' },
+                    { src: '/portfolio/lovable-uploads/42b053d9-45a6-4294-9a5d-be7f40656bd0.png', title: 'Python Essentials 2', issuer: 'Cisco Networking Academy', date: 'Sep 2023', credentialId: 'CISCO-PY-2' },
+                    { src: '/portfolio/lovable-uploads/british-airways-forage-ds-certificate.jpg', title: 'Data Science Job Simulation', issuer: 'British Airways (Forage)', date: 'Jul 2025', credentialId: 'Z2c6B5Nav2ETJkXrw' },
+                    { src: '/portfolio/lovable-uploads/hp-life-data-science-analytics.jpg', title: 'Data Science & Analytics', issuer: 'HP LIFE', date: 'Jan 2026', credentialId: 'HP-DSA-001' },
                   ].map((cert, index) => (
                     <div key={index} className="border rounded-lg overflow-hidden transition-all duration-300 cursor-pointer" style={{ 
                       backgroundColor: darkMode ? '#040A1A' : '#FFFFFF',
@@ -617,7 +692,7 @@ export default function Index() {
       <section id="resume" className="py-16 md:py-20 px-4" style={{ backgroundColor: darkMode ? '#1A202C' : '#FFFFFF' }}>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: darkMode ? '#FFFFFF' : '#111827' }}>Resume</h2>
-          <p className="text-base md:text-lg mb-6 md:mb-8" style={{ color: darkMode ? '#C7CDD8' : '#5F6B7A' }}>Download my complete resume to learn more about my experience, projects, and qualifications as a Python Developer.</p>
+          <p className="text-base md:text-lg mb-6 md:mb-8" style={{ color: darkMode ? '#C7CDD8' : '#5F6B7A' }}>Download my complete resume to learn more about my experience, projects, and qualifications as a Software Engineer and AI Applications Developer.</p>
           <a href="/portfolio/Abdul%20Rehman%20Marfani%20Resume.pdf" download className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-8 border-transparent" style={{ 
             backgroundColor: darkMode ? '#FFFFFF' : '#182238',
             color: darkMode ? '#1F2937' : '#FFFFFF',
@@ -726,7 +801,7 @@ export default function Index() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <div>
               <h3 className="text-lg md:text-xl font-bold mb-4">Abdul Rehman Marfani</h3>
-              <p className="text-sm md:text-base text-gray-400">Python Developer passionate about automation, web development, and creating innovative solutions.</p>
+              <p className="text-sm md:text-base text-gray-400">Software Engineer and AI Applications Developer passionate about full-stack development, automation, and creating innovative solutions.</p>
             </div>
             <div>
               <h4 className="font-semibold mb-4 text-sm md:text-base">Quick Links</h4>
@@ -763,7 +838,7 @@ export default function Index() {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-6 md:mt-8 pt-6 md:pt-8 text-center text-gray-400">
-            <p className="text-xs md:text-sm">© 2025 Abdul Rehman Marfani. All rights reserved.</p>
+            <p className="text-xs md:text-sm">© 2026 Abdul Rehman Marfani. All rights reserved.</p>
           </div>
         </div>
       </footer>
