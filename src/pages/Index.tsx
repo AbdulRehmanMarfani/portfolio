@@ -652,6 +652,7 @@ export default function Index() {
                     { src: '/portfolio/lovable-uploads/135ed8d5-f2d4-4278-8bb7-aed77d9297b8.png', title: 'Python Essentials 1', issuer: 'Cisco Networking Academy', date: 'Sep 2023', credentialId: 'CISCO-PY-1' },
                     { src: '/portfolio/lovable-uploads/42b053d9-45a6-4294-9a5d-be7f40656bd0.png', title: 'Python Essentials 2', issuer: 'Cisco Networking Academy', date: 'Sep 2023', credentialId: 'CISCO-PY-2' },
                     { src: '/portfolio/lovable-uploads/british-airways-forage-ds-certificate.jpg', title: 'Data Science Job Simulation', issuer: 'British Airways (Forage)', date: 'Jul 2025', credentialId: 'Z2c6B5Nav2ETJkXrw' },
+                    { src: '/portfolio/lovable-uploads/hp-life-data-science-analytics.jpg', title: 'Data Science & Analytics', issuer: 'HP LIFE', date: 'Jan 2026', credentialId: 'HP-DSA-001' },
                   ].map((cert, index) => (
                     <div key={index} className="border rounded-lg overflow-hidden transition-all duration-300 cursor-pointer" style={{ 
                       backgroundColor: darkMode ? '#040A1A' : '#FFFFFF',
