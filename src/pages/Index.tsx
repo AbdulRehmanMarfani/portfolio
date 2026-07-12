@@ -186,7 +186,7 @@ export default function Index() {
             <div>
               <div className="w-48 md:w-64 h-48 md:h-64 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg">
                 <img
-                  src="/portfolio/lovable-uploads/ChatGPT Image Jul 7, 2025, 06_45_24 PM.png"
+                  src="/portfolio/lovable-uploads/image.png"
                   alt="Abdul Rehman"
                   className="w-full h-full object-cover"
                 />
