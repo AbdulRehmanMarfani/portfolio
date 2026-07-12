@@ -319,6 +319,20 @@ export default function Index() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               {
+                title: 'Memora',
+                description: 'Local-first desktop app for offline academic document processing, featuring a local Whisper transcription pipeline, async file handling, and durable SQLite storage.',
+                tech: ['Electron', 'React', 'TypeScript', 'FastAPI', 'Whisper', 'SQLite'],
+                github: '',
+                live: '',
+              },
+              {
+                title: 'AI Race Engineer',
+                description: 'Multi-agent race strategy engine for the Toyota GR Cup using the Gemini API, with a low-latency FastAPI and WebSockets telemetry pipeline feeding a real-time dashboard.',
+                tech: ['Gemini API', 'FastAPI', 'WebSockets', 'Tailwind CSS', 'Framer Motion'],
+                github: '',
+                live: '',
+              },
+              {
                 title: 'ClariNote',
                 description: 'All-in-one focus and study workspace with Pomodoro timer, flashcards, progress tracking, and an AI assistant.',
                 tech: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel', 'AI'],
@@ -420,6 +434,16 @@ export default function Index() {
                           border: `1px solid ${darkMode ? '#263248' : '#D7DFEA'}`
                         }}>
                           You are already here
+                        </button>
+                      </div>
+                    ) : (project.title === 'Memora' || project.title === 'AI Race Engineer') ? (
+                      <div className="w-full">
+                        <button disabled className="w-full rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 px-4 py-2" style={{ 
+                          backgroundColor: darkMode ? 'transparent' : '#FFFFFF',
+                          color: darkMode ? '#F5F7FA' : '#111827',
+                          border: `1px solid ${darkMode ? '#263248' : '#D7DFEA'}`
+                        }}>
+                          Private Project
                         </button>
                       </div>
                     ) : (
