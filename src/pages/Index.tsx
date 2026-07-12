@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Github, Linkedin, Instagram, Mail, Moon, Sun, Menu, X, Code2, Palette, Database, ExternalLink, Briefcase, GraduationCap, Phone, MapPin, Download, Award } from 'lucide-react';
 
-const roles = ['Python Developer', 'Frontend Developer', 'Aspiring Full-Stack Engineer'];
+const roles = ['Software Engineer', 'AI Applications Developer', 'Full-Stack Builder'];
 
 export default function Index() {
   const [darkMode, setDarkMode] = useState(true);
@@ -132,7 +132,7 @@ export default function Index() {
               <span>from Karachi, Pakistan.</span>
               <span className="flex items-center gap-2">
                 <Mail className="inline h-4 w-4 text-gray-500 dark:text-gray-400" />
-                Freelance Python Developer
+                Software Engineer & Full-Stack Builder
               </span>
             </div>
             <div className="flex space-x-6 mt-4">
@@ -194,14 +194,14 @@ export default function Index() {
             </div>
             <div>
               <p className="text-base md:text-lg text-gray-2000 dark:text-gray-300 mb-6">
-                I'm a dynamic Python Developer with a strong foundation in web development and automation. Currently pursuing my Cambridge A Levels in Computer Science, Mathematics, and Physics at Cedar College.
+                I'm a Software Engineer and AI Applications Developer with a strong foundation in full-stack development, automation, and machine learning. I completed my Cambridge A Levels in Mathematics, Physics, and Computer Science at Cedar College (Graduated June 2026).
               </p>
               <p className="text-base md:text-lg text-black dark:text-gray-300 mb-6">
-                I excel in creating innovative solutions through Python automation, API integrations, and building responsive web applications. My passion lies in solving complex problems and fostering collaboration in tech communities.
+                I build end-to-end applications spanning React and TypeScript front-ends, FastAPI back-ends, and AI-powered features using tools like Whisper and Hugging Face. My passion lies in solving complex problems and fostering collaboration in tech communities.
               </p>
               <div className="bg-gray-50 dark:bg-gray-800 p-4 md:p-6 rounded-lg border-l-4 border-primary">
                 <p className="text-gray-700 dark:text-gray-300 italic text-sm md:text-base">
-                  "Python automation and API integration enthusiast, always eager to learn and build innovative solutions."
+                  "AI applications developer and full-stack builder, always eager to learn and build innovative solutions."
                 </p>
               </div>
             </div>
