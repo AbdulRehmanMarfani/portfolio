@@ -489,9 +489,52 @@ export default function Index() {
             }}>
               <h3 className="text-xl font-semibold mb-4 flex items-center" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>
                 <Briefcase className="h-5 w-5 mr-2" style={{ color: darkMode ? '#F5F7FA' : '#111827' }} />
-                Work Experience
+                Experience & Leadership
               </h3>
               <div className="space-y-6">
+                <div className="pl-4" style={{ borderLeft: `4px solid ${darkMode ? '#F4C430' : '#EAB308'}` }}>
+                  <h3 className="font-semibold text-base md:text-lg" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Chief Operating Officer</h3>
+                  <p className="font-medium text-sm md:text-base" style={{ color: darkMode ? '#F4C430' : '#EAB308' }}>Cedar CODES</p>
+                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#6F788A' : '#6B7280' }}>September 2025 - Present • Cedar College</p>
+                  <ul className="text-xs md:text-sm space-y-1" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>
+                    <li>• Direct operations for a 50-member student tech society, coordinating event production, outreach campaigns, and technical curricula across a 14-member executive board</li>
+                    <li>• Spearheaded organizational and logistics strategy that won the school's prestigious annual SCORE Award Trophy</li>
+                  </ul>
+                </div>
+                <div className="pl-4" style={{ borderLeft: `4px solid ${darkMode ? '#3B82F6' : '#3B82F6'}` }}>
+                  <h3 className="font-semibold text-base md:text-lg" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Module Co-Lead — QWERTY</h3>
+                  <p className="font-medium text-sm md:text-base" style={{ color: darkMode ? '#3B82F6' : '#3B82F6' }}>Scinova Science Olympiad IX</p>
+                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#6F788A' : '#6B7280' }}>January 2026 • 250+ Attendees</p>
+                  <ul className="text-xs md:text-sm space-y-1" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>
+                    <li>• Co-led the launch of Scinova IX's first computer science module, QWERTY; designed competitive programming tasks and event flow for 250+ attendees</li>
+                    <li>• Presented winning participants at the closing ceremony and supported judging criteria for module evaluation</li>
+                  </ul>
+                </div>
+                <div className="pl-4" style={{ borderLeft: `4px solid ${darkMode ? '#22C55E' : '#22C55E'}` }}>
+                  <h3 className="font-semibold text-base md:text-lg" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Junior Executive</h3>
+                  <p className="font-medium text-sm md:text-base" style={{ color: darkMode ? '#22C55E' : '#22C55E' }}>Scinova Science Olympiad VIII</p>
+                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#6F788A' : '#6B7280' }}>January 2025 • 250+ Attendees</p>
+                  <ul className="text-xs md:text-sm space-y-1" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>
+                    <li>• Supported modular planning and logistical coordination across Physics, Robotics, and Mathematics tracks for 250+ student attendees</li>
+                  </ul>
+                </div>
+                <div className="pl-4" style={{ borderLeft: `4px solid ${darkMode ? '#F5F7FA' : '#182238'}` }}>
+                  <h3 className="font-semibold text-base md:text-lg" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Co-Lead & Workshop Facilitator</h3>
+                  <p className="font-medium text-sm md:text-base" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Hackpocalypse 2025</p>
+                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#6F788A' : '#6B7280' }}>2025 • 110+ Participants</p>
+                  <ul className="text-xs md:text-sm space-y-1" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>
+                    <li>• Co-led event operations, registration pipelines, and schedule management for a hackathon with 110+ participants</li>
+                    <li>• Designed and facilitated a hands-on Pygame workshop introducing students to game development and software fundamentals</li>
+                  </ul>
+                </div>
+                <div className="pl-4" style={{ borderLeft: `4px solid ${darkMode ? '#3B82F6' : '#3B82F6'}` }}>
+                  <h3 className="font-semibold text-base md:text-lg" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Co-Lead</h3>
+                  <p className="font-medium text-sm md:text-base" style={{ color: darkMode ? '#3B82F6' : '#3B82F6' }}>Daydream Karachi</p>
+                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#6F788A' : '#6B7280' }}>2024 • 1,000+ Attendees</p>
+                  <ul className="text-xs md:text-sm space-y-1" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>
+                    <li>• Managed live operations, supplier logistics, and venue scheduling for a student festival hosting 1,000+ attendees</li>
+                  </ul>
+                </div>
                 <div className="pl-4" style={{ borderLeft: `4px solid ${darkMode ? '#F4C430' : '#EAB308'}` }}>
                   <h3 className="font-semibold text-base md:text-lg" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Data Science Intern (Virtual)</h3>
                   <p className="font-medium text-sm md:text-base" style={{ color: darkMode ? '#F4C430' : '#EAB308' }}>British Airways (Forage)</p>
@@ -547,8 +590,8 @@ export default function Index() {
                 <div className="pl-4" style={{ borderLeft: `4px solid ${darkMode ? '#3B82F6' : '#3B82F6'}` }}>
                   <h3 className="font-semibold text-base md:text-lg" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Cambridge A Levels</h3>
                   <p className="font-medium text-sm md:text-base" style={{ color: darkMode ? '#3B82F6' : '#3B82F6' }}>Cedar College Karachi</p>
-                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#6F788A' : '#6B7280' }}>Expected June 2026 • Computer Science, Mathematics, Physics</p>
-                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>Active member of CREW and Cedar CODES clubs. Part of organizing team for Robotics & Physics modules at Scinnova VIII.</p>
+                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#6F788A' : '#6B7280' }}>Graduated June 2026 • Mathematics, Physics, Computer Science</p>
+                  <p className="text-xs md:text-sm mb-2" style={{ color: darkMode ? '#D4DAE5' : '#5F6B7A' }}>Achieved Straight A Grades at AS Level • Dean's List • Honour Roll. Active member of CREW and Cedar CODES clubs; part of the organizing team for Robotics & Physics modules at Scinova VIII.</p>
                 </div>
                 <div className="pl-4" style={{ borderLeft: `4px solid ${darkMode ? '#22C55E' : '#22C55E'}` }}>
                   <h3 className="font-semibold text-base md:text-lg" style={{ color: darkMode ? '#F5F7FA' : '#111827' }}>Cambridge O Levels</h3>
