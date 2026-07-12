@@ -692,7 +692,7 @@ export default function Index() {
       <section id="resume" className="py-16 md:py-20 px-4" style={{ backgroundColor: darkMode ? '#1A202C' : '#FFFFFF' }}>
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ color: darkMode ? '#FFFFFF' : '#111827' }}>Resume</h2>
-          <p className="text-base md:text-lg mb-6 md:mb-8" style={{ color: darkMode ? '#C7CDD8' : '#5F6B7A' }}>Download my complete resume to learn more about my experience, projects, and qualifications as a Python Developer.</p>
+          <p className="text-base md:text-lg mb-6 md:mb-8" style={{ color: darkMode ? '#C7CDD8' : '#5F6B7A' }}>Download my complete resume to learn more about my experience, projects, and qualifications as a Software Engineer and AI Applications Developer.</p>
           <a href="/portfolio/Abdul%20Rehman%20Marfani%20Resume.pdf" download className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-8 border-transparent" style={{ 
             backgroundColor: darkMode ? '#FFFFFF' : '#182238',
             color: darkMode ? '#1F2937' : '#FFFFFF',
@@ -801,7 +801,7 @@ export default function Index() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <div>
               <h3 className="text-lg md:text-xl font-bold mb-4">Abdul Rehman Marfani</h3>
-              <p className="text-sm md:text-base text-gray-400">Python Developer passionate about automation, web development, and creating innovative solutions.</p>
+              <p className="text-sm md:text-base text-gray-400">Software Engineer and AI Applications Developer passionate about full-stack development, automation, and creating innovative solutions.</p>
             </div>
             <div>
               <h4 className="font-semibold mb-4 text-sm md:text-base">Quick Links</h4>
@@ -838,7 +838,7 @@ export default function Index() {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-6 md:mt-8 pt-6 md:pt-8 text-center text-gray-400">
-            <p className="text-xs md:text-sm">© 2025 Abdul Rehman Marfani. All rights reserved.</p>
+            <p className="text-xs md:text-sm">© 2026 Abdul Rehman Marfani. All rights reserved.</p>
           </div>
         </div>
       </footer>
